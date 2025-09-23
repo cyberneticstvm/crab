@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\PaymentMode;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,8 +18,21 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Vijoy Sasidharn',
+            'email' => 'mail@cybernetics.me',
+            'password' => Hash::make('stupid'),
+            'role' => 'admin',
         ]);
+
+        $pmodes = [
+            'Cash',
+            'Bank',
+            'Cheque',
+            'UPI',
+            'Other'
+        ];
+        foreach ($pmodes as $pmode) {
+            PaymentMode::insert(['name' => $pmode]);
+        }
     }
 }

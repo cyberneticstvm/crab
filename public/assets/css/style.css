@@ -33055,3 +33055,9 @@ span.twitter-typeahead .tt-suggestion.active, span.twitter-typeahead .tt-suggest
     60. RTL CSS Ends
 ==========================**/
 /*# sourceMappingURL=style.css.map */
+
+.req::after {
+  content: " *";
+  color: red;
+  font-weight: bold;
+}

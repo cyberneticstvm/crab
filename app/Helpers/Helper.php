@@ -8,3 +8,16 @@
 
     return $code;
 }*/
+
+use App\Models\Donation;
+
+function totDonationAmount()
+{
+    $amount = Donation::sum('amount');
+    return number_format($amount, 2);
+}
+
+function totDonorCount()
+{
+    return Donation::count();
+}
