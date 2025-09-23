@@ -51,44 +51,51 @@
       <div class="row">
         <div class="col-12">
           <div class="login-card">
-            <form class="theme-form login-form">
-              <h4>CRAB Login</h4>
-              <h6>Welcome back! Log in to your account.</h6>
-              <div class="form-group">
-                <label>Email Address</label>
-                <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
-                  <input class="form-control" type="email" required="" placeholder="xxx@example.com">
-                </div>
+            <!--<form class="theme-form login-form">-->
+            {{ html()->form('POST')->route('user.login')->class('theme-form login-form')->open() }}
+            <h4>CRAB Login</h4>
+            <h6>Welcome back! Log in to your account.</h6>
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
+                {{ html()->email('email', old('email'))->class('form-control')->placeholder('hello@example.com') }}
               </div>
-              <div class="form-group">
-                <label>Password</label>
-                <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                  <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
-                  <div class="show-hide"><span class="show"> </span></div>
-                </div>
+              @error('email')
+              <small class="text-danger">{{ $errors->first('email') }}</small>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
+                {{ html()->password('password', old('password'))->class('form-control')->placeholder('******') }}
+                <div class="show-hide"><span class="show"> </span></div>
               </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <input id="checkbox1" type="checkbox">
-                  <label for="checkbox1">Remember password</label>
-                </div><a class="link" href="{{ route('login') }}">Forgot password?</a>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-              </div>
-              <div class="login-social-title">
-                <h5>Follow Us</h5>
-              </div>
-              <div class="form-group">
-                <ul class="login-social">
-                  <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="linkedin"></i></a></li>
-                  <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="twitter"></i></a></li>
-                  <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="facebook"></i></a></li>
-                  <li><a href="https://www.instagram.com/login" target="_blank"><i data-feather="instagram"> </i></a></li>
-                </ul>
-              </div>
-              <p>Don't have account?<a class="ms-2" href="{{ route('login') }}">Create Account</a></p>
-            </form>
+              @error('password')
+              <small class="text-danger">{{ $errors->first('password') }}</small>
+              @enderror
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <input id="checkbox1" type="checkbox" name="remember" value="1">
+                <label for="checkbox1">Remember password</label>
+              </div><a class="link" href="{{ route('login') }}">Forgot password?</a>
+            </div>
+            <div class="form-group">
+              {{ html()->submit('Login')->class('btn btn-submit btn-primary btn-block') }}
+            </div>
+            <div class="login-social-title">
+              <h5>Follow Us</h5>
+            </div>
+            <div class="form-group">
+              <ul class="login-social">
+                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/login" target="_blank"><i data-feather="instagram"> </i></a></li>
+              </ul>
+            </div>
+            <p>Don't have account?<a class="ms-2" href="{{ route('login') }}">Create Account</a></p>
+            {{ HTML()->form()->close() }}
           </div>
         </div>
       </div>
@@ -112,6 +119,7 @@
   <script src="{{ asset('/assets/js/script.js') }}"></script>
   <!-- login js-->
   <!-- Plugin used-->
+  @include("message")
 </body>
 
 </html>
