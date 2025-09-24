@@ -33,7 +33,8 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Administration</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="{{ route('donation.register') }}">Donation</a></li>
+                            <li><a href="{{ route('member.register', 'contributor') }}">Contributors</a></li>
+                            <li><a href="{{ route('contribution.register') }}">Donation</a></li>
                         </ul>
                     </li>
                 </ul>

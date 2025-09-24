@@ -27,6 +27,7 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/feather-icon.css') }}">
     <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/select2.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/datatables.css') }}">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
@@ -115,6 +116,8 @@
     <script src="{{ asset('/assets/js/bootstrap/popper.min.js') }}"></script>
     <script src="{{ asset('/assets/js/bootstrap/bootstrap.min.js') }}"></script>
     <!-- Plugins JS start-->
+    <script src="{{ asset('/assets/js/select2/select2.full.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/select2/select2-custom.js') }}"></script>
     <script src="{{ asset('/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('/assets/js/datatable/datatables/datatable.custom.js') }}"></script>
     <script src="{{ asset('/assets/js/tooltip-init.js') }}"></script>

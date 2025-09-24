@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('contributions', function (Blueprint $table) {
             $table->id();
-            $table->date('donation_date');
-            $table->string('name', 100);
-            $table->string('mobile', 10);
-            $table->string('email', 50)->nullable();
-            $table->string('pan_number', 15)->nullable();
-            $table->string('address')->nullable();
+            $table->unsignedBigInteger('member_id');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
+            $table->date('payment_date');
             $table->unsignedBigInteger('payment_mode');
             $table->foreign('payment_mode')->references('id')->on('payment_modes')->onDelete('cascade');
             $table->decimal('amount', 10, 2)->default(0);
@@ -36,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('contributions');
     }
 };

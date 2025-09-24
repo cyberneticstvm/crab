@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donation;
+use Illuminate\Http\Request;
+use App\Models\Contribution;
+use App\Models\Member;
 use App\Models\PaymentMode;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DonationController extends Controller
+class ContributionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $donations = Donation::withTrashed()->orderBy('donation_date')->get();
-        return view('donation.index', compact('donations'));
+        $donations = Contribution::withTrashed()->orderBy('payment_date')->get();
+        return view('contribution.index', compact('donations'));
     }
 
     /**
@@ -25,7 +23,8 @@ class DonationController extends Controller
     public function create()
     {
         $pmodes = PaymentMode::pluck('name', 'id');
-        return view('donation.create', compact('pmodes'));
+        $members = Member::pluck('name', 'id');
+        return view('contribution.create', compact('pmodes', 'members'));
     }
 
     /**
@@ -34,10 +33,8 @@ class DonationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'donation_date' => 'required|date',
-            'name' => 'required',
-            'mobile' => 'required|numeric|digits:10',
-            'address' => 'required',
+            'payment_date' => 'required|date',
+            'member_id' => 'required',
             'payment_mode' => 'required',
             'amount' => 'required|numeric|gt:0',
         ]);
@@ -45,11 +42,11 @@ class DonationController extends Controller
             $inputs = $request->all();
             $inputs['created_by'] = Auth::user()->id;
             $inputs['updated_by'] = Auth::user()->id;
-            Donation::create($inputs);
+            Contribution::create($inputs);
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->route('donation.register')->with("success", "Donation recorded successfully");
+        return redirect()->route('contribution.register')->with("success", "Contribution recorded successfully");
     }
 
     /**
@@ -65,9 +62,10 @@ class DonationController extends Controller
      */
     public function edit(string $id)
     {
-        $donation = Donation::findOrFail(decrypt($id));
+        $donation = Contribution::findOrFail(decrypt($id));
         $pmodes = PaymentMode::pluck('name', 'id');
-        return view('donation.edit', compact('donation', 'pmodes'));
+        $members = Member::pluck('name', 'id');
+        return view('contribution.edit', compact('donation', 'pmodes', 'members'));
     }
 
     /**
@@ -76,22 +74,20 @@ class DonationController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'donation_date' => 'required|date',
-            'name' => 'required',
-            'mobile' => 'required|numeric|digits:10',
-            'address' => 'required',
+            'payment_date' => 'required|date',
+            'member_id' => 'required',
             'payment_mode' => 'required',
             'amount' => 'required|numeric|gt:0',
         ]);
         try {
-            $donation = Donation::findOrFail(decrypt($id));
+            $donation = Contribution::findOrFail(decrypt($id));
             $inputs = $request->all();
             $inputs['updated_by'] = Auth::user()->id;
             $donation->update($inputs);
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->route('donation.register')->with("success", "Donation updated successfully");
+        return redirect()->route('contribution.register')->with("success", "Contribution updated successfully");
     }
 
     /**
@@ -99,7 +95,7 @@ class DonationController extends Controller
      */
     public function destroy(string $id)
     {
-        Donation::findOrFail(decrypt($id))->delete();
-        return redirect()->route('donation.register')->with("success", "Donation deleted successfully");
+        Contribution::findOrFail(decrypt($id))->delete();
+        return redirect()->route('contribution.register')->with("success", "Contribution deleted successfully");
     }
 }

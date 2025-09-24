@@ -20,7 +20,7 @@
                             <div class="col-sm-6">
                                 <h5>Donation Register</h5>
                             </div>
-                            <div class="col-sm-6 text-end"><a href="{{ route('donation.create') }}" class="btn btn-primary">Create</a></div>
+                            <div class="col-sm-6 text-end"><a href="{{ route('contribution.create') }}" class="btn btn-primary">Create</a></div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -29,7 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>Date</th>
-                                        <th>Donor Name</th>
+                                        <th>Contributor Name</th>
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Amount</th>
@@ -42,17 +42,17 @@
                                 <tbody>
                                     @forelse($donations as $key => $donation)
                                     <tr>
-                                        <td>{{ $donation->donation_date->format('d.M.Y')}}</td>
-                                        <td>{{ $donation->name }}</td>
-                                        <td>{{ $donation->mobile }}</td>
-                                        <td>{{ $donation->email }}</td>
+                                        <td>{{ $donation->payment_date->format('d.M.Y')}}</td>
+                                        <td>{{ $donation->member->name }}</td>
+                                        <td>{{ $donation->member->mobile }}</td>
+                                        <td>{{ $donation->member->email }}</td>
                                         <td class="text-end">{{ $donation->amount }}</td>
                                         <td>{{ $donation->pmode->name }}</td>
-                                        <td class="text-center"><a href="{{ route('donation.receipt', encrypt($donation->id)) }}" target="_blank"><i class="fa fa-file-pdf-o fa-lg text-danger"></i></a></td>
+                                        <td class="text-center"><a href="{{ route('contribution.receipt', encrypt($donation->id)) }}" target="_blank"><i class="fa fa-file-pdf-o fa-lg text-danger"></i></a></td>
                                         <td class="text-center">{!! $donation->delStatus() !!}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('donation.edit', encrypt($donation->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="{{ route('donation.delete', encrypt($donation->id)) }}" class="dlt"><i class="fa fa-trash fa-lg text-danger"></i></a>
+                                            <a href="{{ route('contribution.edit', encrypt($donation->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="{{ route('contribution.delete', encrypt($donation->id)) }}" class="dlt"><i class="fa fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                     </tr>
                                     @empty

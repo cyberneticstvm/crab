@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CrabController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,16 +24,25 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/logout', 'logout')->name('logout');
     });
 
-    Route::prefix('donation')->controller(DonationController::class)->group(function () {
-        Route::get('register', 'index')->name('donation.register');
-        Route::get('create', 'create')->name('donation.create');
-        Route::post('create', 'store')->name('donation.save');
-        Route::get('edit/{id}', 'edit')->name('donation.edit');
-        Route::post('edit/{id}', 'update')->name('donation.update');
-        Route::get('delete/{id}', 'destroy')->name('donation.delete');
+    Route::prefix('member')->controller(MemberController::class)->group(function () {
+        Route::get('register/{type}', 'index')->name('member.register');
+        Route::get('create/{type}', 'create')->name('member.create');
+        Route::post('create/{type}', 'store')->name('member.save');
+        Route::get('edit/{id}', 'edit')->name('member.edit');
+        Route::post('edit/{id}', 'update')->name('member.update');
+        Route::get('delete/{id}', 'destroy')->name('member.delete');
+    });
+
+    Route::prefix('contribution')->controller(ContributionController::class)->group(function () {
+        Route::get('register', 'index')->name('contribution.register');
+        Route::get('create', 'create')->name('contribution.create');
+        Route::post('create', 'store')->name('contribution.save');
+        Route::get('edit/{id}', 'edit')->name('contribution.edit');
+        Route::post('edit/{id}', 'update')->name('contribution.update');
+        Route::get('delete/{id}', 'destroy')->name('contribution.delete');
     });
 
     Route::prefix('pdf')->controller(PdfController::class)->group(function () {
-        Route::get('donation/receipt/{id}', 'donationReceipt')->name('donation.receipt');
+        Route::get('contribution/receipt/{id}', 'contributionReceipt')->name('contribution.receipt');
     });
 });

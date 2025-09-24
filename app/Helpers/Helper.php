@@ -9,15 +9,15 @@
     return $code;
 }*/
 
-use App\Models\Donation;
+use App\Models\Contribution;
 
 function totDonationAmount()
 {
-    $amount = Donation::sum('amount');
+    $amount = Contribution::sum('amount');
     return number_format($amount, 2);
 }
 
 function totDonorCount()
 {
-    return Donation::count();
+    return Contribution::count();
 }
