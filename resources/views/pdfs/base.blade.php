@@ -3,6 +3,8 @@
 
 <head>
     <title>CRAB</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -10,7 +12,15 @@
             font-weight: normal;
         }
 
+        .title-color {
+            color: #394432;
+        }
+
         .font-big {
+            font-size: 20px;
+        }
+
+        .font-medium {
             font-size: 15px;
         }
 
@@ -38,6 +48,11 @@
             border: 1px solid #e6e6e6;
         }
 
+        .box {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
         .border-0 {
             border: 0;
         }
@@ -47,6 +62,10 @@
             border: 1px solid #262525;
             padding: 5px;
             text-align: left;
+        }
+
+        .ln-h-30 {
+            line-height: 30px;
         }
 
         .pd-1 {
@@ -71,6 +90,10 @@
 
         .mt-100 {
             margin-top: 100%;
+        }
+
+        .mb-50 {
+            margin-bottom: 10px;
         }
 
         .mb-50 {
