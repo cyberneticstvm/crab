@@ -143,7 +143,7 @@
                 <pre />
                 <pre />
                 <h2 class="text-center">{{ $message->title }}</h2>
-                <p style="">{!! $message->message !!}</p>
+                <p>{!! Str::wordWrap($message->message, 100) !!}</p>
                 <pre />
             </div>
         </div>
