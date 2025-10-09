@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => storage_path('app/private'),
             'serve' => true,
             'throw' => false,
             'report' => false,
@@ -45,6 +45,11 @@ return [
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
+        ],
+
+        'crab_messages' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/pdfs',
         ],
 
         's3' => [

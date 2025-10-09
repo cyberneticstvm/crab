@@ -8,7 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class CrabController extends Controller
 {
@@ -53,11 +53,11 @@ class CrabController extends Controller
         //try {
         $message = Message::findOrFail(decrypt($id));
         $filename = 'message_' . time() . '.pdf';
-        $path = 'pdfs/' . $filename;
+        $path = public_path('pdfs/');
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
-        Storage::put($path, $pdf->output());
-        $url = 'https://crab.softbugs.in/storage/public/' . $path;
-        if (Storage::disk('public')->exists($path)):
+        $pdf->save($path . $filename);
+        $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
+        if (File::exists($url)):
             foreach ($request->recipients as $key => $recipient):
                 $member = Member::find($recipient);
                 if ($member):
