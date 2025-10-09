@@ -43,28 +43,28 @@ class CrabController extends Controller
         /*return response()->streamDownload(function () use ($pdf) {
             echo $pdf->stream();
         }, 'message' . '.pdf');*/
-        try {
-            $message = Message::findOrFail(decrypt($id));
-            $filename = 'message_' . time() . '.pdf';
-            $path = 'pdfs/' . $filename;
-            $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
-            Storage::put($path, $pdf->output());
-            $url = 'https://crab.softbugs.in/public/storage/' . $path;
-            if (Storage::disk('public')->exists($path)):
-                foreach ($request->recipients as $key => $recipient):
-                    $member = Member::find($recipient);
-                    if ($member):
-                        $res = sendWAMessage($url, $member);
-                        dd($res);
-                        die;
-                    endif;
-                endforeach;
-            else:
-                return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
-            endif;
-        } catch (Exception $e) {
-            return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
-        }
+        //try {
+        $message = Message::findOrFail(decrypt($id));
+        $filename = 'message_' . time() . '.pdf';
+        $path = 'pdfs/' . $filename;
+        $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
+        Storage::put($path, $pdf->output());
+        $url = 'https://crab.softbugs.in/public/storage/' . $path;
+        if (Storage::disk('public')->exists($path)):
+            foreach ($request->recipients as $key => $recipient):
+                $member = Member::find($recipient);
+                if ($member):
+                    $res = sendWAMessage($url, $member);
+                    dd($res);
+                    die;
+                endif;
+            endforeach;
+        else:
+            return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
+        endif;
+        //} catch (Exception $e) {
+        //return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
+        //}
         return redirect()->back()->with("success", "Message sent successfully");
     }
 }
