@@ -25,6 +25,7 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/logout', 'logout')->name('logout');
 
         Route::get('/wa/send/message/{id}', 'waMessage')->name('wa.message');
+        Route::get('/wa/msg/preview/{id}', 'waMessagePreview')->name('wa.message.preview');
         Route::post('/wa/send/message/{id}', 'sendWAMessage')->name('send.wa.message');
     });
 

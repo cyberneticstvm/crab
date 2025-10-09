@@ -63,6 +63,7 @@
                         </div>
                         <div class="col-md-12 mt-3 text-end">
                             <button class="btn btn-submit btn-primary" type="submit">Send Message</button>
+                            <a class="btn btn-info" href="{{ route('wa.message.preview', encrypt($message->id)) }}" target="_blank">Preview</a>
                             <a class="btn btn-secondary" onclick="window.history.back()">Cancel</a>
                         </div>
                         {{ html()->form()->close() }}
