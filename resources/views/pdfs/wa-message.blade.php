@@ -143,7 +143,7 @@
                 <pre />
                 <pre />
                 <h2 class="text-center">{{ $message->title }}</h2>
-                <P>{!! $message->message ||}</P>
+                <P>{!! $message->message !!}</P>
                 <pre />
             </div>
         </div>
