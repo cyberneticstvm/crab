@@ -47,11 +47,10 @@ class CrabController extends Controller
         $message = Message::findOrFail(decrypt($id));
         $filename = 'message_' . time() . '.pdf';
         $path = 'pdfs/' . $filename;
-        $path1 = 'pdf/' . $filename;
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
         Storage::put($path, $pdf->output());
         $url = 'https://crab.softbugs.in/public/storage/' . $path;
-        if (Storage::disk('public')->exists($path1)):
+        if (Storage::disk('public')->exists($path)):
             foreach ($request->recipients as $key => $recipient):
                 $member = Member::find($recipient);
                 if ($member):
