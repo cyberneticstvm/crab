@@ -42,12 +42,12 @@ class CrabController extends Controller
             $filename = 'message_' . time() . '.pdf';
             $path = 'pdfs/' . $filename;
             $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
-            $url = 'https://crab.softbugs.in/storage/' . $path;
+            $url = 'https://crab.softbugs.in/public/storage/' . $path;
             Storage::put($path, $pdf->output());
             foreach ($request->recipients as $key => $recipient):
                 $member = Member::find($recipient);
                 if ($member):
-                    $res = sendWAMessage($url, $member);
+                    sendWAMessage($url, $member);
                 endif;
             endforeach;
         } catch (Exception $e) {
