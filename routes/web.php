@@ -15,6 +15,7 @@ Route::get('/', function () {
 Route::middleware(['web'])->group(function () {
     Route::prefix('')->controller(AuthController::class)->group(function () {
         Route::post('/', 'login')->name('user.login');
+        Route::get('/wa/send/message', 'sendWaMessage')->name('send.wa.message');
     });
 });
 

@@ -24,4 +24,11 @@ class AuthController extends Controller
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
     }
+
+    function sendWaMessage()
+    {
+        $res = sendWAMessage();
+        dd($res);
+        die;
+    }
 }
