@@ -143,6 +143,7 @@
                 <pre />
                 <pre />
                 <h2 class="text-center">ചറപറ! സുലോ വിന്തേന പിഷി വാട്ടിയം കിടിരാമൽ തൈവലം</h2>
+                <P>{{ $message->message }}</P>
                 <pre />
             </div>
         </div>
