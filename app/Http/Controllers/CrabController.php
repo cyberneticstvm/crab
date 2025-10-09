@@ -48,7 +48,7 @@ class CrabController extends Controller
         $path = 'pdfs/' . $filename;
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
         Storage::put($path, $pdf->output());
-        echo 'https://crab.softbugs.in/storage' . $path;
+        echo 'https://crab.softbugs.in/storage/' . $path;
         /*$res = sendWAMessage($file);
         dd($res);
         die;*/
