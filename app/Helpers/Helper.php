@@ -23,12 +23,12 @@ function totDonorCount()
     return Contribution::count();
 }
 
-function sendWAMessage($file)
+function sendWAMessage($url, $member)
 {
     $token = Config::get('crabconfig.whatsapp.token');
     $config = [
         "messaging_product" => "whatsapp",
-        "to" => "+919188848860",
+        "to" => "+91" . $member->mobile,
         "type" => "template",
         "template" => [
             "name" => "crab_notification",
@@ -41,7 +41,7 @@ function sendWAMessage($file)
                             "type" => "document",
                             "document" =>
                             [
-                                "link" => $file,
+                                "link" => "https://crab.softbugs.in/public/assets/docs/crab-letter-head.pdf",
                             ],
                         ],
                     ]
@@ -49,7 +49,7 @@ function sendWAMessage($file)
                 [
                     "type" => "body",
                     "parameters" => [
-                        ["type" => "text", "text" => 'Cybernetics'],
+                        ["type" => "text", "text" => $member->name],
                     ]
                 ],
             ]
