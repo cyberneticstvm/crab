@@ -62,6 +62,8 @@ class CrabController extends Controller
                 $member = Member::find($recipient);
                 if ($member):
                     $res = sendWAMessage($url, $member);
+                    dd($res);
+                    die;
                 endif;
             endforeach;
         else:
