@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Models\Message;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -36,21 +37,22 @@ class CrabController extends Controller
         $request->validate([
             'recipients' => 'required',
         ]);
-        $message = Message::findOrFail(decrypt($id));
-        /*foreach ($request->recipients as $key => $recipient):
-            $member = Member::find($recipient);
-            if ($member):
-                $pdf = PDF::loadview('', compact('message'));
-                $file = $pdf->output();
-            endif;
-        endforeach;*/
-        $filename = 'message_' . time() . '.pdf';
-        $path = 'pdfs/' . $filename;
-        $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
-        Storage::put($path, $pdf->output());
-        $file = 'https://crab.softbugs.in/storage/' . $path;
-        $res = sendWAMessage($file);
-        dd($res);
-        die;
+        try {
+            $message = Message::findOrFail(decrypt($id));
+            $filename = 'message_' . time() . '.pdf';
+            $path = 'pdfs/' . $filename;
+            $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
+            $url = 'https://crab.softbugs.in/storage/' . $path;
+            Storage::put($path, $pdf->output());
+            foreach ($request->recipients as $key => $recipient):
+                $member = Member::find($recipient);
+                if ($member):
+                    $res = sendWAMessage($url, $member);
+                endif;
+            endforeach;
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
+        }
+        return redirect()->back()->with("success", "Message sent successfully");
     }
 }
