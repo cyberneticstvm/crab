@@ -49,7 +49,7 @@ class CrabController extends Controller
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
         Storage::put($path, $pdf->output());
         $pdfUrl = Storage::url($path);
-        echo Storage::get($pdfUrl);
+        echo Storage::get($path);
         /*$res = sendWAMessage($file);
         dd($res);
         die;*/
