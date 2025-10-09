@@ -38,13 +38,12 @@ class CrabController extends Controller
             'recipients' => 'required',
         ]);
         $message = Message::findOrFail(decrypt($id));
-        mb_internal_encoding('UTF-8');
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
-        return $pdf->stream('message' . '.pdf');
+        //return $pdf->stream('message' . '.pdf');
         /*return response()->streamDownload(function () use ($pdf) {
             echo $pdf->stream();
         }, 'message' . '.pdf');*/
-        /*try {
+        try {
             $message = Message::findOrFail(decrypt($id));
             $filename = 'message_' . time() . '.pdf';
             $path = 'pdfs/' . $filename;
@@ -60,6 +59,6 @@ class CrabController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->back()->with("success", "Message sent successfully");*/
+        return redirect()->back()->with("success", "Message sent successfully");
     }
 }
