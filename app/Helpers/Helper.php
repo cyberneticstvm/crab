@@ -41,7 +41,7 @@ function sendWAMessage($file)
                             "type" => "document",
                             "document" =>
                             [
-                                "link" => "https://crab.softbugs.in/public/assets/docs/crab-letter-head.pdf",
+                                "link" => $file,
                             ],
                         ],
                     ]
