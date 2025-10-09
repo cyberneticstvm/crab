@@ -143,7 +143,7 @@
                 <pre />
                 <pre />
                 <h2 class="text-center">{{ $message->title }}</h2>
-                <p style="width: 100%; padding: 0 auto;">{!! $message->message !!}</p>
+                <p style="">{!! $message->message !!}</p>
                 <pre />
             </div>
         </div>
