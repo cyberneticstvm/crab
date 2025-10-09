@@ -35,6 +35,7 @@
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('member.register', 'contributor') }}">Contributors</a></li>
                             <li><a href="{{ route('contribution.register') }}">Donation</a></li>
+                            <li><a href="{{ route('message.register') }}">Message</a></li>
                         </ul>
                     </li>
                 </ul>

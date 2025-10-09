@@ -23,7 +23,7 @@ function totDonorCount()
     return Contribution::count();
 }
 
-function sendWAMessage()
+function sendWAMessage($file)
 {
     $token = Config::get('crabconfig.whatsapp.token');
     $config = [
@@ -41,7 +41,7 @@ function sendWAMessage()
                             "type" => "document",
                             "document" =>
                             [
-                                "link" => "{{ asset('/assets/docs/crab-letter-head.pdf') }}",
+                                "link" => "https://crab.softbugs.in/public/assets/docs/crab-letter-head.pdf",
                             ],
                         ],
                     ]
@@ -55,9 +55,8 @@ function sendWAMessage()
             ]
         ]
     ];
-    //curl_init();
     $data_string = json_encode($config);
-    $ch = curl_init('https://graph.facebook.com/v22.0/543653938835557/messages');
+    $ch = curl_init('https://graph.facebook.com/v22.0/846298318559639/messages');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

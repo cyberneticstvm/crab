@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donation;
+use App\Models\Member;
+use App\Models\Message;
+use Barryvdh\DomPDF\Facade\pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CrabController extends Controller
 {
@@ -19,5 +22,36 @@ class CrabController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('login')->with("success", "User logged out successfully");
+    }
+
+    function waMessage(string $id)
+    {
+        $members = Member::orderBy('name')->get();
+        $message = Message::findOrFail(decrypt($id));
+        return view('message.message', compact('members', 'message'));
+    }
+
+    function sendWAMessage(Request $request, string $id)
+    {
+        $request->validate([
+            'recipients' => 'required',
+        ]);
+        $message = Message::findOrFail(decrypt($id));
+        /*foreach ($request->recipients as $key => $recipient):
+            $member = Member::find($recipient);
+            if ($member):
+                $pdf = PDF::loadview('', compact('message'));
+                $file = $pdf->output();
+            endif;
+        endforeach;*/
+        $filename = 'message_' . time() . '.pdf';
+        $path = 'public/pdfs/' . $filename;
+        $pdf = PDF::loadview('pdfs.wa-message', compact('message'));
+        Storage::put($path, $pdf->output());
+        $pdfUrl = Storage::url($path);
+        echo $pdfUrl;
+        /*$res = sendWAMessage($file);
+        dd($res);
+        die;*/
     }
 }
