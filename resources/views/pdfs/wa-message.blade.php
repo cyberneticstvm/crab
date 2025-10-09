@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
     <title>Cancer Remedy Assistance Bureau (CRAB)</title>
     <link rel="icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
     <style>
         @font-face {
-            font-family: 'MalluFontManjari';
+            font-family: 'NotoSansMalayalam';
             /* Choose a name for your font */
-            src: url('/storage/fonts/Manjari-Regular.ttf') format('truetype');
+            src: url("{{ asset('/fonts/noto-sans/NotoSansMalayalam-Regular.ttf') }}") format('truetype');
         }
 
-        .mallu {
-            font-family: 'MalluFontManjari', sans-serif;
-            /*font-family: 'DejaVu Sans', sans-serif;*/
+        /*.notoSans {
+            font-family: notoSans !important;
             font-size: medium !important;
             line-height: 25px;
             color: #000 !important;
-        }
+        }*/
 
         body {
-            font-family: 'DejaVu Sans';
-            font-size: 12px;
+            font-family: 'NotoSansMalayalam' sans-serif;
         }
 
         .body-bg {
@@ -144,8 +142,7 @@
                 <pre />
                 <pre />
                 <pre />
-                <h2 class="text-center mallu">{!! $message->title !!}</h2>
-                <p class="font-big text-dark mallu">{!! $message->message !!}</p>
+                <h2 class="text-center">ചറപറ! സുലോ വിന്തേന പിഷി വാട്ടിയം കിടിരാമൽ തൈവലം</h2>
                 <pre />
             </div>
         </div>
