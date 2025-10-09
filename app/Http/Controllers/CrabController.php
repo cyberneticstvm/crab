@@ -50,12 +50,16 @@ class CrabController extends Controller
             $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
             Storage::put($path, $pdf->output());
             $url = 'https://crab.softbugs.in/public/storage/' . $path;
-            foreach ($request->recipients as $key => $recipient):
-                $member = Member::find($recipient);
-                if ($member):
-                    sendWAMessage($url, $member);
-                endif;
-            endforeach;
+            if (Storage::exists($path)):
+                foreach ($request->recipients as $key => $recipient):
+                    $member = Member::find($recipient);
+                    if ($member):
+                        sendWAMessage($url, $member);
+                    endif;
+                endforeach;
+            else:
+                return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
+            endif;
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
