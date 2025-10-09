@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use App\Models\Message;
-use Barryvdh\DomPDF\Facade\pdf;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -46,7 +46,7 @@ class CrabController extends Controller
         endforeach;*/
         $filename = 'message_' . time() . '.pdf';
         $path = 'public/pdfs/' . $filename;
-        $pdf = PDF::loadview('pdfs.wa-message', compact('message'));
+        $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
         Storage::put($path, $pdf->output());
         $pdfUrl = Storage::url($path);
         echo $pdfUrl;
