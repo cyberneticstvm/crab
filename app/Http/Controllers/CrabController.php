@@ -54,7 +54,9 @@ class CrabController extends Controller
                 foreach ($request->recipients as $key => $recipient):
                     $member = Member::find($recipient);
                     if ($member):
-                        sendWAMessage($url, $member);
+                        $res = sendWAMessage($url, $member);
+                        dd($res);
+                        die;
                     endif;
                 endforeach;
             else:
