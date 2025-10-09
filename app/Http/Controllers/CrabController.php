@@ -45,7 +45,7 @@ class CrabController extends Controller
             endif;
         endforeach;*/
         $filename = 'message_' . time() . '.pdf';
-        $path = 'public/pdfs/' . $filename;
+        $path = 'pdfs/' . $filename;
         $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
         Storage::put($path, $pdf->output());
         $pdfUrl = Storage::url($path);
