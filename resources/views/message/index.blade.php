@@ -31,7 +31,6 @@
                                         <th>Created Date</th>
                                         <th>Title</th>
                                         <th>Send</th>
-                                        <th>View</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
