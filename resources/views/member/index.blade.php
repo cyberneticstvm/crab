@@ -18,7 +18,7 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h5>{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }} Register</h5>
+                                <h5>{{ ($type == 'contributor') ? ucfirst('Well-wisher')  : 'Member' }} Register</h5>
                             </div>
                             <div class="col-sm-6 text-end dropdown-basic">
                                 <div class="dropdown text-start">
