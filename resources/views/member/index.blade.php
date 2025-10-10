@@ -35,6 +35,7 @@
                                     <tr>
                                         <th>Register Date</th>
                                         <th>Member Name</th>
+                                        <th>Country</th>
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Address</th>
@@ -48,6 +49,7 @@
                                     <tr>
                                         <td>{{ $member->created_at->format('d.M.Y')}}</td>
                                         <td>{{ $member->name }}</td>
+                                        <td>{{ $member->country?->name }}</td>
                                         <td>{{ $member->mobile }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>
