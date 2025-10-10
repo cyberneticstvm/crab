@@ -8,8 +8,8 @@
     <meta name="description" content="Cancer Remedy Assistance Bureau">
     <meta name="keywords" content="cancer, remedy, cancer remedy">
     <meta name="author" content="softbugs">
-    <link rel="icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/assets/docs/crab-logo.jpeg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/assets/docs/crab-logo.jpeg') }}" type="image/x-icon">
     <title>CRAB - Cancer Remedy Assistance Bureau</title>
     <!-- Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
