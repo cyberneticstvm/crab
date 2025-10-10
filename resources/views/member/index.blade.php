@@ -46,7 +46,7 @@
                                     @forelse($members as $key => $member)
                                     <tr>
                                         <td>{{ $member->name }}</td>
-                                        <td>{{ $member->mobile }} | {{ $member->country?->name }}</td>
+                                        <td>{{ $member->mobile }} | {{ $member->country?->code }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>
                                         <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donate</a></td>
