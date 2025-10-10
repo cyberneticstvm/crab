@@ -141,9 +141,9 @@
                 <pre />
                 <pre />
                 <pre />
-                <div class="text-end txt-small notoSans">Date: {{ date('d.M.Y h:i a') }}</div>
+                <div class="text-end txt-small">Date: {{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
-                    <h2 class="notoSans">{!! $message->title !!}</h2>
+                    <p class="text-center font-big notoSans">{!! $message->title !!}</p>
                 </div>
                 <div style="white-space:wrap">
                     <p class="notoSans">{!! $message->message !!}</p>
