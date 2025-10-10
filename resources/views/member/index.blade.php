@@ -33,9 +33,7 @@
                             <table class="" id="advance-1">
                                 <thead>
                                     <tr>
-                                        <th>Register Date</th>
                                         <th>Member Name</th>
-                                        <th>Country</th>
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Address</th>
@@ -47,10 +45,8 @@
                                 <tbody>
                                     @forelse($members as $key => $member)
                                     <tr>
-                                        <td>{{ $member->created_at->format('d.M.Y')}}</td>
                                         <td>{{ $member->name }}</td>
-                                        <td>{{ $member->country?->name }}</td>
-                                        <td>{{ $member->mobile }}</td>
+                                        <td>{{ $member->mobile }} | {{ $member->country?->name }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>
                                         <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donate</a></td>
