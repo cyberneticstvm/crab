@@ -2,6 +2,7 @@
 @section("pdfContent")
 <div class="row">
     <div class="col text-center">
+        <img src="./assets/docs/crab-logo.jpeg" width='15%' />
         <h1 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h1>
         <p class="font-big">Reg No. T 84/99</p>
         <p class="font-medium">TC 96/657(1), Near Kunjuveedu, Ittykonam, Pulayanarkotta</p>
