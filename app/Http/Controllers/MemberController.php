@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Member;
 use Exception;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class MemberController extends Controller
      */
     public function create($type)
     {
-        return view('member.create', compact('type'));
+        $pcodes = Country::pluck('phone', 'phone');
+        return view('member.create', compact('type', 'pcodes'));
     }
 
     /**
@@ -34,6 +36,7 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required',
             'mobile' => 'required|numeric|digits:10|unique:members,mobile',
+            'phone_code' => 'required',
             'email' => 'nullable|unique:members,email',
             'address' => 'required',
         ]);
@@ -63,7 +66,8 @@ class MemberController extends Controller
     public function edit(string $id)
     {
         $member = Member::findOrFail(decrypt($id));
-        return view('member.edit', compact('member'));
+        $pcodes = Country::pluck('phone', 'phone');
+        return view('member.edit', compact('member', 'pcodes'));
     }
 
     /**
@@ -74,6 +78,7 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required',
             'mobile' => 'required|numeric|digits:10|unique:members,mobile,' . decrypt($id),
+            'phone_code' => 'required',
             'email' => 'nullable|unique:members,email,' . decrypt($id),
             'address' => 'required',
         ]);

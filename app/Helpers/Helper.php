@@ -28,7 +28,7 @@ function sendWAMessage($url, $member)
     $token = Config::get('crabconfig.whatsapp.token');
     $config = [
         "messaging_product" => "whatsapp",
-        "to" => "+91" . $member->mobile,
+        "to" => "+" . $member->phone_code . $member->mobile,
         "type" => "template",
         "template" => [
             "name" => "crab_notification",
