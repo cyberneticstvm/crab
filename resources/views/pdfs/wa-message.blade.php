@@ -10,7 +10,7 @@
         @font-face {
             font-family: 'NotoSansMalayalam';
             /* Choose a name for your font */
-            src: url('/storage/fonts/noto-sans/NotoSansMalayalam-Regular.ttf') format('truetype');
+            src: url('/storage/fonts/Manjari-Regular.ttf') format('truetype');
         }
 
         .notoSans {
