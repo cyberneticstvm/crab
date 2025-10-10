@@ -13,12 +13,12 @@
             src: url('/storage/fonts/noto-sans/NotoSansMalayalam-Regular.ttf') format('truetype');
         }
 
-        /*.notoSans {
-            font-family: notoSans !important;
+        .notoSans {
+            font-family: 'NotoSansMalayalam' !important;
             font-size: medium !important;
-            line-height: 25px;
+            line-height: 20px;
             color: #000 !important;
-        }*/
+        }
 
         body {
             font-family: 'NotoSansMalayalam' sans-serif;
@@ -113,8 +113,8 @@
             color: #000;
         }
 
-        .txt {
-            font-size: 10px !important;
+        .txt-small {
+            font-size: 12px !important;
         }
 
         .b-0 {
@@ -141,13 +141,16 @@
                 <pre />
                 <pre />
                 <pre />
-                <pre />
-                <h2 class="text-center NotoSansMalayalam">{{ $message->title }}</h2>
-                <p class="NotoSansMalayalam">{!! Str::wordWrap($message->message, 70) !!}</p>
+                <div class="text-end txt-small notoSans">Date: {{ date('d.M.Y h:i a') }}</div>
+                <div style="white-space:wrap">
+                    <h2 class="text-center notoSans">{!! $message->title !!}</h2>
+                </div>
+                <div style="white-space:wrap">
+                    <p class="notoSans">{!! $message->message !!}</p>
+                </div>
                 <pre />
             </div>
         </div>
-        <div class="footer text-end">Date: {{ date('d.M.Y h:i a') }}</div>
     </div>
 </body>
 
