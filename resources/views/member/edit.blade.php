@@ -5,7 +5,7 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3>{{ ucfirst($member->type) }}</h3>
+                    <h3>{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }}</h3>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>{{ ucfirst($member->type) }} Create</h5>
+                        <h5>{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }} Update</h5>
                     </div>
                     {{ html()->form('post')->route('member.update', encrypt($member->id))->class('theme-form')->open() }}
                     <div class="card-body">

@@ -16,7 +16,18 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>Dashboard</h5><span>Donor Engagement Dashboard</span>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>Dashboard</h5><span>Donor Engagement Dashboard</span>
+                            </div>
+                            <div class="col-sm-6 text-end dropdown-basic">
+                                <div class="dropdown text-start">
+                                    <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Create <span><i class="icofont icofont-arrow-down"></i></span></button>
+                                    <div class="dropdown-content"><a href="{{ route('member.create', 'member') }}" data-bs-original-title="" title="">Member</a><a href="{{ route('member.create', 'contributor') }}" data-bs-original-title="" title="">Well-wisher</a></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

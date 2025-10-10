@@ -55,6 +55,9 @@
             {{ html()->form('POST')->route('user.login')->class('theme-form login-form')->open() }}
             <h4>CRAB Login</h4>
             <h6>Welcome back! Log in to your account.</h6>
+            <div class="mt-1 mb-1 text-center">
+              <img class="img-90 rounded-circle" src="{{ asset('/assets/docs/crab-logo.jpeg') }}" alt="">
+            </div>
             <div class="form-group">
               <label>Email Address</label>
               <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
@@ -94,7 +97,7 @@
                 <li><a href="https://www.instagram.com/login" target="_blank"><i data-feather="instagram"> </i></a></li>
               </ul>
             </div>
-            <p>Don't have account?<a class="ms-2" href="{{ route('login') }}">Create Account</a></p>
+            <p>Powered by<a class="ms-2" href="https://softbugs.in" target="_blank">www.softbugs.in</a></p>
             {{ HTML()->form()->close() }}
           </div>
         </div>
