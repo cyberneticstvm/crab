@@ -67,7 +67,8 @@ class MemberController extends Controller
     {
         $member = Member::findOrFail(decrypt($id));
         $pcodes = Country::pluck('phone', 'phone');
-        return view('member.edit', compact('member', 'pcodes'));
+        $type = $member->type->name;
+        return view('member.edit', compact('member', 'pcodes', 'type'));
     }
 
     /**
