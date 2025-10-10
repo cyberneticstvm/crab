@@ -37,7 +37,7 @@
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Address</th>
-                                        <th>Donate</th>
+                                        <th>Donation</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -49,7 +49,7 @@
                                         <td>{{ $member->mobile }} | {{ $member->country?->code }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>
-                                        <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donate</a></td>
+                                        <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donation</a></td>
                                         <td class="text-center">{!! $member->delStatus() !!}</td>
                                         <td class="text-center">
                                             <a href="{{ route('member.edit', encrypt($member->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
