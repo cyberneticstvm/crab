@@ -20,7 +20,7 @@
                             <div class="col-sm-6">
                                 <h5>Donation Register</h5>
                             </div>
-                            <div class="col-sm-6 text-end"><a href="{{ route('contribution.create') }}" class="btn btn-primary">Create</a></div>
+                            <div class="col-sm-6 text-end"><a href="{{ route('contribution.create', encrypt('0')) }}" class="btn btn-primary">Create</a></div>
                         </div>
                     </div>
                     <div class="card-body">

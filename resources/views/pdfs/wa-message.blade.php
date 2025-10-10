@@ -10,7 +10,7 @@
         @font-face {
             font-family: 'NotoSansMalayalam';
             /* Choose a name for your font */
-            src: url("{{ asset('/fonts/noto-sans/NotoSansMalayalam-Regular.ttf') }}") format('truetype');
+            src: url('/storage/fonts/noto-sans/NotoSansMalayalam-Regular.ttf') format('truetype');
         }
 
         /*.notoSans {
@@ -142,8 +142,8 @@
                 <pre />
                 <pre />
                 <pre />
-                <h2 class="text-center">{{ $message->title }}</h2>
-                <p>{!! Str::wordWrap($message->message, 70) !!}</p>
+                <h2 class="text-center NotoSansMalayalam">{{ $message->title }}</h2>
+                <p class="NotoSansMalayalam">{!! Str::wordWrap($message->message, 70) !!}</p>
                 <pre />
             </div>
         </div>

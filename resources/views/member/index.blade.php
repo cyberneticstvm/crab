@@ -5,7 +5,7 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3>{{ ucfirst($type) }}s</h3>
+                    <h3>{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }}s</h3>
                 </div>
             </div>
         </div>
@@ -18,12 +18,12 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h5>{{ ucfirst($type) }} Register</h5>
+                                <h5>{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }} Register</h5>
                             </div>
                             <div class="col-sm-6 text-end dropdown-basic">
                                 <div class="dropdown text-start">
                                     <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Create <span><i class="icofont icofont-arrow-down"></i></span></button>
-                                    <div class="dropdown-content"><!--<a href="{{ route('member.create', 'member') }}" data-bs-original-title="" title="">Member</a>--><a href="{{ route('member.create', $type) }}" data-bs-original-title="" title="">Contributor</a></div>
+                                    <div class="dropdown-content"><!--<a href="{{ route('member.create', 'member') }}" data-bs-original-title="" title="">Member</a>--><a href="{{ route('member.create', $type) }}" data-bs-original-title="" title="">{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }}</a></div>
                                 </div>
                             </div>
                         </div>
@@ -38,6 +38,7 @@
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Address</th>
+                                        <th>Donate</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -50,6 +51,7 @@
                                         <td>{{ $member->mobile }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>
+                                        <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donate</a></td>
                                         <td class="text-center">{!! $member->delStatus() !!}</td>
                                         <td class="text-center">
                                             <a href="{{ route('member.edit', encrypt($member->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;

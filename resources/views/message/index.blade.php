@@ -30,6 +30,7 @@
                                     <tr>
                                         <th>Created Date</th>
                                         <th>Title</th>
+                                        <th>Preview</th>
                                         <th>Send</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -40,6 +41,7 @@
                                     <tr>
                                         <td>{{ $message->created_at->format('d.M.Y')}}</td>
                                         <td>{{ $message->title }}</td>
+                                        <td class="text-center"><a href="{{ route('wa.message.preview', encrypt($message->id)) }}" target="_blank">Preview</a></td>
                                         <th class="text-center"><a href="{{ route('wa.message', encrypt($message->id)) }}" class=""><i class="fa fa-whatsapp fa-lg text-success"></i></a></th>
                                         <td class="text-center">{!! $message->delStatus() !!}</td>
                                         <td class="text-center">

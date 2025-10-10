@@ -33,9 +33,10 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Administration</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="{{ route('member.register', 'contributor') }}">Contributors</a></li>
-                            <li><a href="{{ route('contribution.register') }}">Donation</a></li>
-                            <li><a href="{{ route('message.register') }}">Message</a></li>
+                            <li><a href="{{ route('member.register', 'contributor') }}">Well-wishers</a></li>
+                            <li><a href="{{ route('member.register', 'member') }}">Members</a></li>
+                            <li><a href="{{ route('contribution.register') }}">Donations</a></li>
+                            <li><a href="{{ route('message.register') }}">Messages</a></li>
                         </ul>
                     </li>
                 </ul>

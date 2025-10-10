@@ -20,11 +20,14 @@ class ContributionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
+        $mid = decrypt($id);
         $pmodes = PaymentMode::pluck('name', 'id');
-        $members = Member::pluck('name', 'id');
-        return view('contribution.create', compact('pmodes', 'members'));
+        $members = Member::when($mid > 0, function ($q) use ($mid) {
+            return $q->where('id', $mid);
+        })->pluck('name', 'id');
+        return view('contribution.create', compact('pmodes', 'members', 'mid'));
     }
 
     /**

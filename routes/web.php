@@ -40,7 +40,7 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     Route::prefix('contribution')->controller(ContributionController::class)->group(function () {
         Route::get('register', 'index')->name('contribution.register');
-        Route::get('create', 'create')->name('contribution.create');
+        Route::get('create/{id}', 'create')->name('contribution.create');
         Route::post('create', 'store')->name('contribution.save');
         Route::get('edit/{id}', 'edit')->name('contribution.edit');
         Route::post('edit/{id}', 'update')->name('contribution.update');

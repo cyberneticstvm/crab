@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <label class="col-form-label pt-0 req" for="contributor">Contributor Name</label>
-                                    {{ html()->select('member_id', $members, null)->class('form-control js-example-basic-single')->placeholder('Select') }}
+                                    {{ html()->select('member_id', $members, $mid)->class('form-control js-example-basic-single')->placeholder('Select') }}
                                     @error('member_id')
                                     <small class="text-danger">{{ $errors->first('member_id') }}</small>
                                     @enderror
