@@ -35,7 +35,7 @@ class MemberController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'mobile' => 'required|numeric|digits:10|unique:members,mobile',
+            'mobile' => 'required|numeric|unique:members,mobile',
             'phone_code' => 'required',
             'email' => 'nullable|unique:members,email',
             'address' => 'required',
@@ -77,7 +77,7 @@ class MemberController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'mobile' => 'required|numeric|digits:10|unique:members,mobile,' . decrypt($id),
+            'mobile' => 'required|numeric|unique:members,mobile,' . decrypt($id),
             'phone_code' => 'required',
             'email' => 'nullable|unique:members,email,' . decrypt($id),
             'address' => 'required',
