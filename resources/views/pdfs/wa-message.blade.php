@@ -124,12 +124,11 @@
 
         footer {
             position: fixed;
-            bottom: -30px;
+            bottom: -60px;
             left: 0px;
             right: 0px;
             height: 50px;
             text-align: center;
-            line-height: 35px;
         }
     </style>
 </head>
@@ -148,9 +147,11 @@
                 <div style="white-space:wrap">
                     <p class="notoSans">{!! $message->message !!}</p>
                 </div>
-                <pre />
             </div>
         </div>
+    </div>
+    <div class="" style="position: fixed; bottom: -50px; margin-left: 30%;">
+        <p class="txt-small">This is a computer generated document, powered by <a href="https://softbugs.in" target="_blank">www.softbugs.in</a></p>
     </div>
 </body>
 
