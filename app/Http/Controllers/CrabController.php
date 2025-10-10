@@ -14,7 +14,8 @@ class CrabController extends Controller
 {
     function dashboard()
     {
-        return view('dashboard');
+        $members = Member::withTrashed()->orderBy('name')->get();
+        return view('dashboard', compact('members'));
     }
 
     function logout(Request $request)

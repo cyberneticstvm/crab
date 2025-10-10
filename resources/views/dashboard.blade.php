@@ -16,10 +16,47 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>Dashboard</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                        <h5>Dashboard</h5><span>Donor Engagement Dashboard</span>
                     </div>
                     <div class="card-body">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                        <div class="table-responsive">
+                            <table class="" id="advance-1">
+                                <thead>
+                                    <tr>
+                                        <th>Register Date</th>
+                                        <th>Member Name</th>
+                                        <th>Type</th>
+                                        <th>Country</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Donate</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($members as $key => $member)
+                                    <tr>
+                                        <td>{{ $member->created_at->format('d.M.Y')}}</td>
+                                        <td>{{ $member->name }}</td>
+                                        <td>{{ ($member->type == 'contributor') ? 'Well-wisher' : 'Member' }}</td>
+                                        <td>{{ $member->country?->name }}</td>
+                                        <td>{{ $member->mobile }}</td>
+                                        <td>{{ $member->email }}</td>
+                                        <td>{{ $member->address }}</td>
+                                        <td class="text-center"><a href="{{ route('contribution.create', encrypt($member->id)) }}">Donate</a></td>
+                                        <td class="text-center">{!! $member->delStatus() !!}</td>
+                                        <td class="text-center">
+                                            <a href="{{ route('member.edit', encrypt($member->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="{{ route('member.delete', encrypt($member->id)) }}" class="dlt"><i class="fa fa-trash fa-lg text-danger"></i></a>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

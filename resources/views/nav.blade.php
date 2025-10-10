@@ -28,7 +28,7 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="{{ route('dashboard') }}">Default</a></li>
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Administration</span></a>
