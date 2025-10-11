@@ -53,7 +53,7 @@
           <div class="login-card">
             <!--<form class="theme-form login-form">-->
             {{ html()->form('POST')->route('user.login')->class('theme-form login-form')->open() }}
-            <h4>CRAB Login</h4>
+            <h4>CRAB House Login</h4>
             <h6>Welcome back! Log in to your account.</h6>
             <div class="mt-1 mb-1 text-center">
               <img class="img-90 rounded-circle" src="{{ asset('/assets/docs/crab-logo.jpeg') }}" alt="">
@@ -89,14 +89,14 @@
             <div class="login-social-title">
               <h5>Follow Us</h5>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <ul class="login-social">
                 <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="linkedin"></i></a></li>
                 <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="twitter"></i></a></li>
                 <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="facebook"></i></a></li>
                 <li><a href="https://www.instagram.com/login" target="_blank"><i data-feather="instagram"> </i></a></li>
               </ul>
-            </div>
+            </div>-->
             <p>Powered by<a class="ms-2" href="https://softbugs.in" target="_blank">www.softbugs.in</a></p>
             {{ HTML()->form()->close() }}
           </div>
