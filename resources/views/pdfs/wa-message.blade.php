@@ -22,7 +22,7 @@
 
         body {
             /*font-family: 'NotoSansMalayalam' sans-serif;*/
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .body-bg {
