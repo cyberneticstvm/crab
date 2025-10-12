@@ -42,10 +42,10 @@
                                 <tbody>
                                     @forelse($donations as $key => $donation)
                                     <tr>
-                                        <td>{{ $donation->payment_date->format('d.M.Y')}}</td>
-                                        <td>{{ $donation->member->name }}</td>
-                                        <td>{{ $donation->member->mobile }}</td>
-                                        <td>{{ $donation->member->email }}</td>
+                                        <td>{{ $donation->payment_date?->format('d.M.Y')}}</td>
+                                        <td>{{ $donation->member?->name }}</td>
+                                        <td>{{ $donation->member?->mobile }}</td>
+                                        <td>{{ $donation->member?->email }}</td>
                                         <td class="text-end">{{ $donation->amount }}</td>
                                         <td>{{ $donation->pmode->name }}</td>
                                         <td class="text-center"><a href="{{ route('contribution.receipt', encrypt($donation->id)) }}" target="_blank"><i class="fa fa-file-pdf-o fa-lg text-danger"></i></a></td>
