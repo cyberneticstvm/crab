@@ -77,18 +77,18 @@
               <small class="text-danger">{{ $errors->first('password') }}</small>
               @enderror
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <div class="checkbox">
                 <input id="checkbox1" type="checkbox" name="remember" value="1">
                 <label for="checkbox1">Remember password</label>
               </div><a class="link" href="{{ route('login') }}">Forgot password?</a>
-            </div>
+            </div>-->
             <div class="form-group">
               {{ html()->submit('Login')->class('btn btn-submit btn-primary btn-block') }}
             </div>
-            <div class="login-social-title">
+            <!--<div class="login-social-title">
               <h5>Follow Us</h5>
-            </div>
+            </div>-->
             <!--<div class="form-group">
               <ul class="login-social">
                 <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="linkedin"></i></a></li>

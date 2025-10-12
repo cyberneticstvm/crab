@@ -56,7 +56,7 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h5>Dashboard</h5><span>Donor Engagement Dashboard</span>
+                                <h5>Dashboard</h5><span>Well-wishers</span>
                             </div>
                             <div class="col-sm-6 text-end dropdown-basic">
                                 <div class="dropdown text-start">
@@ -73,7 +73,7 @@
                                 <thead>
                                     <tr>
                                         <th>Member Name</th>
-                                        <th>Type</th>
+                                        <!--<th>Type</th>-->
                                         <th>Mobile</th>
                                         <th>Email</th>
                                         <th>Address</th>
@@ -86,7 +86,7 @@
                                     @forelse($members as $key => $member)
                                     <tr>
                                         <td>{{ $member->name }}</td>
-                                        <td>{{ ($member->type == 'contributor') ? 'Well-wisher' : 'Member' }}</td>
+                                        <!--<td>{{ ($member->type == 'contributor') ? 'Well-wisher' : 'Member' }}</td>-->
                                         <td>{{ $member->mobile }} | {{ $member->country?->code }}</td>
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->address }}</td>

@@ -26,13 +26,14 @@
                             <h6>General </h6>
                         </div>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>
+                    <!--<li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Administration</span></a>
                         <ul class="nav-submenu menu-content">
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li><a href="{{ route('member.register', 'contributor') }}">Well-wishers</a></li>
                             <li><a href="{{ route('member.register', 'member') }}">Members</a></li>
                             <li><a href="{{ route('contribution.register') }}">Donations</a></li>
