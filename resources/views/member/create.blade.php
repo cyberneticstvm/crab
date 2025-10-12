@@ -68,7 +68,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <button class="btn btn-submit btn-primary" type="submit">Save</button>
-                            <a class="btn btn-secondary" onclick="window.history.go(-2)">Cancel</a>
+                            <a class="btn btn-secondary" onclick="window.history.back()">Cancel</a>
                         </div>
                     </div>
                     {{ html()->form()->close() }}
