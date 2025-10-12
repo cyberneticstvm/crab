@@ -26,7 +26,7 @@
                         {{ html()->form('post')->route('send.wa.message', encrypt($message->id))->class('theme-form')->open() }}
                         <div class="col-md-6">
                             <div class="col-sm-12">
-                                <h5>Members</h5>
+                                <h5>Select Members</h5>
                             </div>
                             <div class="col">
                                 <div class="form-group m-t-15 m-checkbox-inline mb-0">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-sm-12">
-                                <h5>Well-wishers</h5>
+                                <h5>Select Well-wishers</h5>
                             </div>
                             <div class="col">
                                 <div class="form-group m-t-15 m-checkbox-inline mb-0">

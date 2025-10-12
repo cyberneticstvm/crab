@@ -35,7 +35,7 @@
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li><a href="{{ route('member.register', 'contributor') }}">Well-wishers</a></li>
-                            <li><a href="{{ route('member.register', 'member') }}">Members</a></li>
+                            <li><a href="{{ route('member.register', 'member') }}">Member</a></li>
                             <li><a href="{{ route('contribution.register') }}">Donations</a></li>
                             <li><a href="{{ route('message.register') }}">Messages</a></li>
                         </ul>
