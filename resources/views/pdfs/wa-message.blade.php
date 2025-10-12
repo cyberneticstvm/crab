@@ -20,9 +20,9 @@
             color: #000 !important;
         }
 
-        body {
+        /*body {
             font-family: 'NotoSansMalayalam' sans-serif;
-        }
+        }*/
 
         .body-bg {
             background: url('./assets/docs/crab-lh-bg.jpg');
