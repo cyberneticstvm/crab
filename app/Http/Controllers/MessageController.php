@@ -14,7 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::withTrashed()->orderByDesc('id')->get();
+        $messages = Message::orderByDesc('id')->get();
         return view('message.index', compact('messages'));
     }
 
