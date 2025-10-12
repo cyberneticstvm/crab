@@ -20,9 +20,10 @@
             color: #000 !important;
         }
 
-        /*body {
-            font-family: 'NotoSansMalayalam' sans-serif;
-        }*/
+        body {
+            /*font-family: 'NotoSansMalayalam' sans-serif;*/
+            font-family: 'Courier New', Courier, monospace;
+        }
 
         .body-bg {
             background: url('./assets/docs/crab-lh-bg.jpg');
