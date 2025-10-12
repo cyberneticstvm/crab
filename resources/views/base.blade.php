@@ -54,10 +54,10 @@
             <div class="main-header-right row m-0">
                 <div class="main-header-left">
                     <div class="logo-wrapper"><a href="{{ route('dashboard') }}">
-                            <h3>CRAB HOUSE</h3>
+                            <h3>CRAB TVM</h3>
                         </a></div>
                     <div class="dark-logo-wrapper"><a href="{{ route('dashboard') }}">
-                            <h3>CRAB HOUSE</h3>
+                            <h3>CRAB TVM</h3>
                         </a></div>
                     <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle"></i></div>
                 </div>
