@@ -24,9 +24,9 @@
                             <div class="row g-3">
                                 <div class="col-sm-3">
                                     <label class="col-form-label pt-0 req" for="date">Date</label>
-                                    {{ html()->date('donation_date', $donation->donation_date->format('Y-m-d'))->class('form-control') }}
-                                    @error('donation_date')
-                                    <small class="text-danger">{{ $errors->first('donation_date') }}</small>
+                                    {{ html()->date('payment_date', $donation->payment_date->format('Y-m-d'))->class('form-control') }}
+                                    @error('payment_date')
+                                    <small class="text-danger">{{ $errors->first('payment_date') }}</small>
                                     @enderror
                                 </div>
                                 <div class="col-sm-4">
