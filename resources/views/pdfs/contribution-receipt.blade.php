@@ -19,7 +19,7 @@
                     <p class="font-medium">Receipt No. {{ $donation->id }}</p>
                 </td>
                 <td class="border-0">
-                    <p class="font-medium text-end">Date. {{ $donation->payment_date->format('d.M.Y') }}</p>
+                    <p class="font-medium text-end">Date. {{ date('d.M.Y') }}</p>
                 </td>
             </tr>
         </table>
