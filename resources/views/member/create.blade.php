@@ -31,14 +31,14 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <label class="col-form-label pt-0 req" for="contributor">Phone Code</label>
-                                    {{ html()->select('phone_code', $pcodes, NULL)->class('form-control js-example-basic-single')->placeholder('Select')->required() }}
+                                    {{ html()->select('phone_code', $pcodes, '91')->class('form-control js-example-basic-single')->placeholder('Select')->required() }}
                                     @error('phone_code')
                                     <small class="text-danger">{{ $errors->first('phone_code') }}</small>
                                     @enderror
                                 </div>
                                 <div class="col-sm-2">
                                     <label class="col-form-label pt-0 req" for="mobile">Mobile Number</label>
-                                    {{ html()->text('mobile', old('mobile') ?? '91')->class('form-control')->maxlength(15)->placeholder('0123456789') }}
+                                    {{ html()->text('mobile', old('mobile'))->class('form-control')->maxlength(15)->placeholder('0123456789') }}
                                     @error('mobile')
                                     <small class="text-danger">{{ $errors->first('mobile') }}</small>
                                     @enderror
