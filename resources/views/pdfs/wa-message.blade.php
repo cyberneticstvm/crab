@@ -30,7 +30,7 @@
         }
 
         .font-big {
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .text-center {
@@ -139,7 +139,7 @@
                 <pre />
                 <pre />
                 <pre />
-                <div class="text-end txt-small" style="font-family: Arial, Helvetica, sans-serif;">Date: {{ date('d.M.Y h:i a') }}</div>
+                <div class="text-end txt-small" style="font-family: Arial, Helvetica, sans-serif;">{{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
                     <p class="text-center font-big fw-bold">{!! $message->title !!}</p>
                 </div>
