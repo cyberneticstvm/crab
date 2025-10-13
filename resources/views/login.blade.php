@@ -86,17 +86,17 @@
             <div class="form-group">
               {{ html()->submit('Login')->class('btn btn-submit btn-primary btn-block') }}
             </div>
-            <!--<div class="login-social-title">
+            <div class="login-social-title">
               <h5>Follow Us</h5>
-            </div>-->
-            <!--<div class="form-group">
+            </div>
+            <div class="form-group">
               <ul class="login-social">
-                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="linkedin"></i></a></li>
-                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/login" target="_blank"><i data-feather="facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/login" target="_blank"><i data-feather="instagram"> </i></a></li>
+                <li><a href="https://www.thecrab.org" target="_blank"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://www.thecrab.org" target="_blank"><i data-feather="twitter"></i></a></li>
+                <li><a href="https://www.thecrab.org" target="_blank"><i data-feather="facebook"></i></a></li>
+                <li><a href="https://www.thecrab.org" target="_blank"><i data-feather="instagram"> </i></a></li>
               </ul>
-            </div>-->
+            </div>
             <p>Powered by<a class="ms-2" href="https://softbugs.in" target="_blank">www.softbugs.in</a></p>
             {{ HTML()->form()->close() }}
           </div>
