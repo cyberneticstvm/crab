@@ -7,9 +7,8 @@
     <link rel="icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
     <style>
-        @font-face {
+        /*@font-face {
             font-family: 'NotoSansMalayalam';
-            /* Choose a name for your font */
             src: url('/storage/fonts/Manjari-Regular.ttf') format('truetype');
         }
 
@@ -18,7 +17,7 @@
             font-size: medium !important;
             line-height: 20px;
             color: #000 !important;
-        }
+        }*/
 
         body {
             /*font-family: 'NotoSansMalayalam' sans-serif;*/
