@@ -139,12 +139,12 @@
                 <pre />
                 <pre />
                 <pre />
-                <div class="text-end txt-small style: font-family: Arial, Helvetica, sans-serif;">Date: {{ date('d.M.Y h:i a') }}</div>
+                <div class="text-end txt-small" style="font-family: Arial, Helvetica, sans-serif;">Date: {{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
-                    <p class="text-center font-big fw-bold style: font-family: Arial, Helvetica, sans-serif;">{!! $message->title !!}</p>
+                    <p class="text-center font-big fw-bold">{!! $message->title !!}</p>
                 </div>
                 <div style="white-space:wrap">
-                    <p class="style: font-family: Arial, Helvetica, sans-serif;">{!! $message->message !!}</p>
+                    <p class="" style="font-family: Arial, Helvetica, sans-serif;">{!! $message->message !!}</p>
                 </div>
             </div>
         </div>
