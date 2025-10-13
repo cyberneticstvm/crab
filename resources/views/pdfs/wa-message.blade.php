@@ -144,7 +144,7 @@
                     <p class="text-center font-big fw-bold">{!! $message->title !!}</p>
                 </div>
                 <div style="white-space:wrap">
-                    <p class="" style="font-family: Arial, Helvetica, sans-serif;">{!! $message->message !!}</p>
+                    <p class="" style="font-family: Arial, Helvetica, sans-serif; line-height:25px">{!! $message->message !!}</p>
                 </div>
             </div>
         </div>
