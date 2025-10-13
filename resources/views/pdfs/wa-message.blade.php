@@ -20,8 +20,7 @@
         }*/
 
         body {
-            /*font-family: 'NotoSansMalayalam' sans-serif;*/
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif !important;
         }
 
         .body-bg {
