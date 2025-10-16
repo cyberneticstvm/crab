@@ -12,7 +12,7 @@
         }
 
         @page {
-            background: url('./assets/docs/crab-lh-bg.jpg') no-repeat 0 0;
+            background: url('/assets/docs/crab-lh-bg.jpg') no-repeat 0 0;
             background-image-resize: 6;
             footer: page-footer;
         }
