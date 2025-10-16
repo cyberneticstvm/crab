@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Models\Message;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as mpdf;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,7 @@ class CrabController extends Controller
     function waMessagePreview(string $id)
     {
         $message = Message::findOrFail(decrypt($id));
-        $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
+        $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
         return $pdf->stream('message' . '.pdf');
     }
 
@@ -49,7 +50,7 @@ class CrabController extends Controller
             $message = Message::findOrFail(decrypt($id));
             $filename = 'crab_house_' . time() . '.pdf';
             $path = public_path('pdfs/');
-            $pdf = Pdf::loadview('pdfs.wa-message', compact('message'));
+            $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
             $pdf->save($path . $filename);
             $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
             if (File::exists(public_path('pdfs/' . $filename))):
