@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <div class="row g-3">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label pt-0 req" for="title">Message Title</label>
+                                    <label class="col-form-label pt-0" for="title">Message Title</label>
                                     {{ html()->text('title', $message->title)->class('form-control')->placeholder('Message Title') }}
                                     @error('title')
                                     <small class="text-danger">{{ $errors->first('title') }}</small>

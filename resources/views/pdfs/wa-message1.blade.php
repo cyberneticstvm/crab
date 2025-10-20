@@ -59,7 +59,7 @@
                 <br />
                 <div class="text-end txt-small">{{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
-                    <p class="font-big text-center">{!! $message->title !!}</p>
+                    <p class="font-big text-center">{!! $message->title ?? '' !!}</p>
                 </div>
                 <div style="white-space:wrap">
                     <p class="">{!! nl2br($message->message) !!}</p>

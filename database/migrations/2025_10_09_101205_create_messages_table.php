@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
+            $table->string('title')->nullable();
             $table->longText('message');
             $table->integer('letter_head')->nullable();
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete('cascade');

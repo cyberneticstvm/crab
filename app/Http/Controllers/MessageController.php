@@ -14,7 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::orderByDesc('id')->get();
+        $messages = Message::withTrashed()->orderByDesc('id')->get();
         return view('message.index', compact('messages'));
     }
 
@@ -32,7 +32,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:messages,title',
+            //'title' => 'required|unique:messages,title',
             'message' => 'required',
         ]);
         try {
@@ -69,7 +69,7 @@ class MessageController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|unique:messages,title,' . decrypt($id),
+            //'title' => 'required|unique:messages,title,' . decrypt($id),
             'message' => 'required',
         ]);
         try {
