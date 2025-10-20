@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contribution;
 use App\Models\Member;
 use App\Models\Message;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -76,5 +77,28 @@ class CrabController extends Controller
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
         return redirect()->back()->with("success", "Message sent successfully");
+    }
+
+    function sendWAReceipt(string $id)
+    {
+        try {
+            $donation = Contribution::findOrFail(decrypt($id));
+            $filename = 'crab_house_receipt' . time() . '.pdf';
+            $path = public_path('pdfs/');
+            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
+            $pdf->save($path . $filename);
+            $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
+            if (File::exists(public_path('pdfs/' . $filename))):
+                $member = Member::find($donation->member_id);
+                if ($member):
+                    $res = sendWAMessage($url, $member);
+                endif;
+            else:
+                return redirect()->back()->with("error", "Inavlid file path");
+            endif;
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage());
+        }
+        return redirect()->back()->with("success", "Receipt sent successfully");
     }
 }
