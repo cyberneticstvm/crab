@@ -29,6 +29,29 @@
                                     <small class="text-danger">{{ $errors->first('title') }}</small>
                                     @enderror
                                 </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label class="col-form-label pt-0 req" for="title">Letter Head Format</label>
+                                <div class="col-sm-3">
+                                    <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                        <div class="radio radio-primary">
+                                            <input id="letter_head" type="radio" name="letter_head" value="1" checked>
+                                            <label class="mb-0" for="letter_head">Option<span class="digits"> 1</span></label>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('/assets/docs/crab-lh-bg.jpg') }}" width="25%" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                        <div class="radio radio-primary">
+                                            <input id="letter_head1" type="radio" name="letter_head" value="2">
+                                            <label class="mb-0" for="letter_head1">Option<span class="digits"> 2</span></label>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('/assets/docs/crab-lh-bg1.jpg') }}" width="25%" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col-sm-12">
                                     <label class="col-form-label pt-0" for="message">Message Content</label>
                                     {{ html()->textarea('message', old('message'))->rows(10)->class('form-control')->placeholder('Message Content') }}

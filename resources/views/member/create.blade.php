@@ -22,11 +22,18 @@
                     <div class="card-body">
                         <div class="card-body">
                             <div class="row g-3">
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     <label class="col-form-label pt-0 req" for="donor">Name</label>
                                     {{ html()->text('name', old('name'))->class('form-control')->placeholder('Name') }}
                                     @error('name')
                                     <small class="text-danger">{{ $errors->first('name') }}</small>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="col-form-label pt-0" for="date">Date of Birth</label>
+                                    {{ html()->date('dob', old('dob') ?? NULL)->class('form-control') }}
+                                    @error('dob')
+                                    <small class="text-danger">{{ $errors->first('dob') }}</small>
                                     @enderror
                                 </div>
                                 <div class="col-sm-2">
@@ -57,7 +64,14 @@
                                     <small class="text-danger">{{ $errors->first('pan_number') }}</small>
                                     @enderror
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
+                                    <label class="col-form-label pt-0" for="pan">Adhaar</label>
+                                    {{ html()->text('adhaar', old('adhaar'))->class('form-control')->maxlength(15)->placeholder('XXXXXXXXXX') }}
+                                    @error('adhaar')
+                                    <small class="text-danger">{{ $errors->first('adhaar') }}</small>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-5">
                                     <label class="col-form-label pt-0 req" for="address">Address</label>
                                     {{ html()->text('address', old('address'))->class('form-control')->placeholder('Address') }}
                                     @error('address')

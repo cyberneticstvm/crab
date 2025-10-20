@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
+            $table->date('dob')->nullable();
             $table->string('phone_code', 5)->nullable();
             $table->string('mobile', 15)->unique();
             $table->string('email', 50)->unique()->nullable();
             $table->string('pan_number', 15)->unique()->nullable();
+            $table->string('adhaar', 15)->unique()->nullable();
             $table->string('address')->nullable();
             $table->enum('type', ['member', 'contributor']);
             $table->unsignedBigInteger('created_by');

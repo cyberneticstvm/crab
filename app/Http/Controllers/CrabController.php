@@ -37,7 +37,11 @@ class CrabController extends Controller
     function waMessagePreview(string $id)
     {
         $message = Message::findOrFail(decrypt($id));
-        $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
+        if ($message->letter_head == 1):
+            $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
+        else:
+            $pdf = mpdf::loadview('pdfs.wa-message1', compact('message'));
+        endif;
         return $pdf->stream('message' . '.pdf');
     }
 
@@ -50,7 +54,11 @@ class CrabController extends Controller
             $message = Message::findOrFail(decrypt($id));
             $filename = 'crab_house_' . time() . '.pdf';
             $path = public_path('pdfs/');
-            $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
+            if ($message->letter_head == 1):
+                $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
+            else:
+                $pdf = mpdf::loadview('pdfs.wa-message1', compact('message'));
+            endif;
             $pdf->save($path . $filename);
             $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
             if (File::exists(public_path('pdfs/' . $filename))):

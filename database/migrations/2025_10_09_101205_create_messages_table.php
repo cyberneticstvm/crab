@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->longText('message');
+            $table->integer('letter_head')->nullable();
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete('cascade');
             $table->foreignId('updated_by')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();
