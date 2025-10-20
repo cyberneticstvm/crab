@@ -35,7 +35,7 @@
                                         <th>Amount</th>
                                         <th>Payment Mode</th>
                                         <th>Receipt</th>
-                                        <th>Status</th>
+                                        <th>Send</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

@@ -83,7 +83,7 @@ class CrabController extends Controller
     {
         try {
             $donation = Contribution::findOrFail(decrypt($id));
-            $filename = 'crab_house_receipt' . time() . '.pdf';
+            $filename = 'crab_house_receipt_' . time() . '.pdf';
             $path = public_path('pdfs/');
             $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
             $pdf->save($path . $filename);
@@ -92,6 +92,8 @@ class CrabController extends Controller
                 $member = Member::find($donation->member_id);
                 if ($member):
                     $res = sendWAMessage($url, $member, 'crab_send_receipt');
+                    dd($res);
+                    die;
                 endif;
             else:
                 return redirect()->back()->with("error", "Inavlid file path");
