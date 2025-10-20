@@ -66,7 +66,7 @@ class CrabController extends Controller
                 foreach ($request->recipients as $key => $recipient):
                     $member = Member::find($recipient);
                     if ($member):
-                        $res = sendWAMessage($url, $member);
+                        $res = sendWAMessage($url, $member, 'crab_notification');
                     endif;
                 endforeach;
             else:
@@ -91,7 +91,7 @@ class CrabController extends Controller
             if (File::exists(public_path('pdfs/' . $filename))):
                 $member = Member::find($donation->member_id);
                 if ($member):
-                    $res = sendWAMessage($url, $member);
+                    $res = sendWAMessage($url, $member, 'crab_send_receipt');
                 endif;
             else:
                 return redirect()->back()->with("error", "Inavlid file path");

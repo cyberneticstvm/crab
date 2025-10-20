@@ -23,7 +23,7 @@ function totDonorCount()
     return Contribution::count();
 }
 
-function sendWAMessage($url, $member)
+function sendWAMessage($url, $member, $template)
 {
     $token = Config::get('crabconfig.whatsapp.token');
     $config = [
@@ -31,7 +31,7 @@ function sendWAMessage($url, $member)
         "to" => "+" . $member->phone_code . $member->mobile,
         "type" => "template",
         "template" => [
-            "name" => "crab_notification",
+            "name" => $template,
             "language" => ["code" => "en"],
             "components" => [
                 [
