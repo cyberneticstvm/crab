@@ -49,7 +49,7 @@
                                         <td class="text-end">{{ $donation->amount }}</td>
                                         <td>{{ $donation->pmode->name }}</td>
                                         <td class="text-center"><a href="{{ route('contribution.receipt', encrypt($donation->id)) }}" target="_blank"><i class="fa fa-file-pdf-o fa-lg text-danger"></i></a></td>
-                                        <td class="text-center"><a href="{{ route('wa.message.receipt', encrypt($donation->id)) }}" class=""><i class="fa fa-whatsapp fa-lg text-success"></i></a></td>
+                                        <td class="text-center"><a href="{{ route('send.wa.receipt', encrypt($donation->id)) }}" class=""><i class="fa fa-whatsapp fa-lg text-success"></i></a></td>
                                         <td class="text-center">{!! $donation->delStatus() !!}</td>
                                         <td class="text-center">
                                             <a href="{{ route('contribution.edit', encrypt($donation->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
