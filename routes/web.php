@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CrabController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\ImportExportController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PdfController;
@@ -28,6 +29,11 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/wa/msg/preview/{id}', 'waMessagePreview')->name('wa.message.preview');
         Route::post('/wa/send/message/{id}', 'sendWAMessage')->name('send.wa.message');
         Route::get('/wa/send/receipt/{id}', 'sendWAReceipt')->name('send.wa.receipt');
+    });
+
+    Route::prefix('export')->controller(ImportExportController::class)->group(function () {
+        Route::get('/member/{type}', 'exportMember')->name('export.member');
+        Route::get('/donation', 'exportDonation')->name('export.donation');
     });
 
     Route::prefix('member')->controller(MemberController::class)->group(function () {

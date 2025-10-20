@@ -17,13 +17,19 @@
                 <div class="card">
                     <div class="card-header pb-0">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <h5>{{ ($type == 'contributor') ? ucfirst('Well-wisher')  : 'Member' }} Register</h5>
                             </div>
-                            <div class="col-sm-6 text-end dropdown-basic">
+                            <div class="col-sm-2 text-end dropdown-basic">
                                 <div class="dropdown text-start">
                                     <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Create <span><i class="icofont icofont-arrow-down"></i></span></button>
                                     <div class="dropdown-content"><!--<a href="{{ route('member.create', 'member') }}" data-bs-original-title="" title="">Member</a>--><a href="{{ route('member.create', $type) }}" data-bs-original-title="" title="">{{ ($type == 'contributor') ? 'Well-wisher' : 'Member' }}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 text-start dropdown-basic">
+                                <div class="dropdown text-start">
+                                    <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Export <span><i class="icofont icofont-arrow-down"></i></span></button>
+                                    <div class="dropdown-content"><a href="{{ route('export.member', $type) }}" data-bs-original-title="" title=""><i class="fa fa-file-excel-o fa-success"></i>&nbsp;&nbsp;Excel</a></div>
                                 </div>
                             </div>
                         </div>

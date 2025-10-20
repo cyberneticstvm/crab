@@ -17,10 +17,21 @@
                 <div class="card">
                     <div class="card-header pb-0">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <h5>Donation Register</h5>
                             </div>
-                            <div class="col-sm-6 text-end"><a href="{{ route('contribution.create', encrypt('0')) }}" class="btn btn-primary">Create</a></div>
+                            <div class="col-sm-2 text-end dropdown-basic">
+                                <div class="dropdown text-start">
+                                    <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Create <span><i class="icofont icofont-arrow-down"></i></span></button>
+                                    <div class="dropdown-content"><a href="{{ route('contribution.create', encrypt('0')) }}" data-bs-original-title="" title="">Create</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 text-start dropdown-basic">
+                                <div class="dropdown text-start">
+                                    <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Export <span><i class="icofont icofont-arrow-down"></i></span></button>
+                                    <div class="dropdown-content"><a href="{{ route('export.donation') }}" data-bs-original-title="" title=""><i class="fa fa-file-excel-o fa-success"></i>&nbsp;&nbsp;Excel</a></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
