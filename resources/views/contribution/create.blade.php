@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <label class="col-form-label pt-0 req" for="amount">Amount</label>
-                                    {{ html()->number('amount', old('amount'))->class('form-control')->placeholder('0.00') }}
+                                    {{ html()->number('amount', old('amount'), 1, 10000000, 1)->class('form-control')->placeholder('0.00') }}
                                     @error('amount')
                                     <small class="text-danger">{{ $errors->first('amount') }}</small>
                                     @enderror
