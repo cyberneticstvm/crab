@@ -13,7 +13,7 @@ class ContributionController extends Controller
 {
     public function index()
     {
-        $donations = Contribution::withTrashed()->orderBy('payment_date')->get();
+        $donations = Contribution::withTrashed()->latest()->get();
         return view('contribution.index', compact('donations'));
     }
 

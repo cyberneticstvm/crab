@@ -15,7 +15,7 @@ class MemberController extends Controller
      */
     public function index($type)
     {
-        $members = Member::withTrashed()->where('type', $type)->orderBy('name')->get();
+        $members = Member::withTrashed()->where('type', $type)->latest()->get();
         return view('member.index', compact('members', 'type'));
     }
 
