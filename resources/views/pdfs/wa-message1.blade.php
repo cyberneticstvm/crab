@@ -57,6 +57,9 @@
                 <br />
                 <br />
                 <br />
+                <br />
+                <br />
+                <br />
                 <div class="text-end txt-small">{{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
                     <p class="font-big text-center">{!! $message->title ?? '' !!}</p>
