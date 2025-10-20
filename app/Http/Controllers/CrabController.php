@@ -81,26 +81,26 @@ class CrabController extends Controller
 
     function sendWAReceipt(string $id)
     {
-        try {
-            $donation = Contribution::findOrFail(decrypt($id));
-            $filename = 'crab_house_receipt_' . time() . '.pdf';
-            $path = public_path('pdfs/');
-            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
-            $pdf->save($path . $filename);
-            $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
-            if (File::exists(public_path('pdfs/' . $filename))):
-                $member = Member::find($donation->member_id);
-                if ($member):
-                    $res = sendWAMessage($url, $member, 'crab_send_receipt');
-                    dd($res);
-                    die;
-                endif;
-            else:
-                return redirect()->back()->with("error", "Inavlid file path");
+        //try {
+        $donation = Contribution::findOrFail(decrypt($id));
+        $filename = 'crab_house_receipt_' . time() . '.pdf';
+        $path = public_path('pdfs/');
+        $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
+        $pdf->save($path . $filename);
+        $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
+        if (File::exists(public_path('pdfs/' . $filename))):
+            $member = Member::find($donation->member_id);
+            if ($member):
+                $res = sendWAMessage($url, $member, 'crab_send_receipt');
+                dd($res);
+                die;
             endif;
-        } catch (Exception $e) {
+        else:
+            return redirect()->back()->with("error", "Inavlid file path");
+        endif;
+        /*} catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }
-        return redirect()->back()->with("success", "Receipt sent successfully");
+        return redirect()->back()->with("success", "Receipt sent successfully");*/
     }
 }
