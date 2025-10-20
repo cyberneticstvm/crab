@@ -62,10 +62,10 @@
                 <br />
                 <div class="text-end txt-small">{{ date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
-                    <p class="font-big text-center">{!! $message->title ?? '' !!}</p>
+                    <p class="font-big text-center" style="margin-left: 25%;">{!! $message->title ?? '' !!}</p>
                 </div>
                 <div style="white-space:wrap">
-                    <p class="">{!! nl2br($message->message) !!}</p>
+                    <p style="margin-left: 25%;">{!! nl2br($message->message) !!}</p>
                 </div>
             </div>
         </div>
