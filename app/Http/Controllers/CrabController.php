@@ -66,7 +66,7 @@ class CrabController extends Controller
                 foreach ($request->recipients as $key => $recipient):
                     $member = Member::find($recipient);
                     if ($member):
-                        $res = sendWAMessage($url, $member, 'crab_notification');
+                        $res = sendWAMessage($url, $member, 'crab_notification', 'Message_From_CRAB_House_TVM_');
                     endif;
                 endforeach;
             else:
@@ -81,26 +81,26 @@ class CrabController extends Controller
 
     function sendWAReceipt(string $id)
     {
-        //try {
-        $donation = Contribution::findOrFail(decrypt($id));
-        $filename = 'crab_house_receipt_' . time() . '.pdf';
-        $path = public_path('pdfs/');
-        $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
-        $pdf->save($path . $filename);
-        $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
-        if (File::exists(public_path('pdfs/' . $filename))):
-            $member = Member::find($donation->member_id);
-            if ($member):
-                $res = sendWAMessage($url, $member, 'crab_send_receipt');
-                dd($res);
-                die;
+        try {
+            $donation = Contribution::findOrFail(decrypt($id));
+            $filename = 'crab_house_receipt_' . time() . '.pdf';
+            $path = public_path('pdfs/');
+            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
+            $pdf->save($path . $filename);
+            $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
+            if (File::exists(public_path('pdfs/' . $filename))):
+                $member = Member::find($donation->member_id);
+                if ($member):
+                    $res = sendWAMessage($url, $member, 'crab_send_donation_receipt', 'Donation_Receipt_From_CRAB_House_TVM_');
+                    dd($res);
+                    die;
+                endif;
+            else:
+                return redirect()->back()->with("error", "Inavlid file path");
             endif;
-        else:
-            return redirect()->back()->with("error", "Inavlid file path");
-        endif;
-        /*} catch (Exception $e) {
+        } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }
-        return redirect()->back()->with("success", "Receipt sent successfully");*/
+        return redirect()->back()->with("success", "Receipt sent successfully");
     }
 }

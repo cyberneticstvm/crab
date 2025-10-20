@@ -23,7 +23,7 @@ function totDonorCount()
     return Contribution::count();
 }
 
-function sendWAMessage($url, $member, $template)
+function sendWAMessage($url, $member, $template, $filename)
 {
     $token = Config::get('crabconfig.whatsapp.token');
     $config = [
@@ -42,7 +42,7 @@ function sendWAMessage($url, $member, $template)
                             "document" =>
                             [
                                 "link" => $url,
-                                "filename" => 'Message_From_CRAB_House_TVM_' . time() . '.pdf',
+                                "filename" => $filename . time() . '.pdf',
                             ],
                         ],
                     ]
