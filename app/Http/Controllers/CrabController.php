@@ -92,8 +92,6 @@ class CrabController extends Controller
                 $member = Member::find($donation->member_id);
                 if ($member):
                     $res = sendWAMessage($url, $member, 'crab_send_donation_receipt', 'Donation_Receipt_From_CRAB_House_TVM_');
-                    dd($res);
-                    die;
                 endif;
             else:
                 return redirect()->back()->with("error", "Inavlid file path");
