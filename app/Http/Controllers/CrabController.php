@@ -68,6 +68,7 @@ class CrabController extends Controller
                         $res = sendWAMessage($url, $member);
                     endif;
                 endforeach;
+                File::delete(public_path('pdfs/' . $filename));
             else:
                 return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
             endif;
