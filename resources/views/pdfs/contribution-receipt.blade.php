@@ -1,13 +1,19 @@
 @extends("pdfs.base")
 @section("pdfContent")
-<div class="row">
+<div class="row receipt">
     <div class="col text-center">
-        <img src="./assets/docs/crab-logo.jpeg" width='15%' />
-        <h1 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h1>
-        <p class="font-big">Reg No. T 84/99</p>
-        <p class="font-medium">TC 96/657(1), Near Kunjuveedu, Ittykonam, Pulayanarkotta</p>
-        <p class="font-medium">Thuruvikkal PO, Thiruvananthapuram, Kerala - 695031</p>
-        <p class="font-medium">Ph. 9447501437 | 9447028686 | 0471-2550355</p>
+        <table class="border-0">
+            <tr class="border-0">
+                <td width="20%" class="border-0"><img src="./assets/docs/crab-logo.jpeg" width='100%' /></td>
+                <td class="border-0">
+                    <h1 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h1>
+                    <p class="font-big">Reg No. T 84/99</p>
+                    <p class="font-medium">TC 96/657(1), Near Kunjuveedu, Ittykonam, Pulayanarkotta</p>
+                    <p class="font-medium">Thuruvikkal PO, Thiruvananthapuram, Kerala - 695031</p>
+                    <p class="font-medium">Ph. 9447501437 | 9447028686 | 0471-2550355</p>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="col text-center mt-10 mb-10">
         <h2 class="title-color">RECEIPT</h2>
@@ -34,7 +40,7 @@
     <div class="font-medium col mt-10">
         <p>CRAB PAN No. AAATC4854E</p>
     </div>
-    <div class="col mt-10">
+    <div class="col mt-5">
         <p class="font-big"><strong class="box"><span style="font-family: DejaVu Sans, sans-serif; ">&#8377;</span>{{ number_format($donation->amount, 2) }}/-</strong></p>
     </div>
     <div class="col text-end">

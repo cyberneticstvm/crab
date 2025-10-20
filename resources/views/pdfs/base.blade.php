@@ -12,6 +12,13 @@
             font-weight: normal;
         }
 
+        .receipt {
+            background: url('./assets/docs/watermark.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+
         .title-color {
             color: #394432;
         }
@@ -74,6 +81,10 @@
 
         .mt-10 {
             margin-top: 10px;
+        }
+
+        .mt-5 {
+            margin-top: 5px;
         }
 
         .mt-30 {
