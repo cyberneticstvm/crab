@@ -107,7 +107,7 @@ class CrabController extends Controller
     function customMessages()
     {
         $messages = CustomMessage::latest()->get();
-        return view("message.custom.index", compact('messages', 'pcodes'));
+        return view("message.custom.index", compact('messages'));
     }
 
     function saveCustomMessage(Request $request)
