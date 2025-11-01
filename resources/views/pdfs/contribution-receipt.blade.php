@@ -6,7 +6,7 @@
             <tr class="border-0">
                 <td width="20%" class="border-0"><img src="./assets/docs/crab-logo.jpeg" width='100%' /></td>
                 <td class="border-0">
-                    <h3 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h3>
+                    <h2 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h2>
                     <p class="font-big">Reg No. T 84/99</p>
                     <p class="font-medium">TC 96/657(1), Near Kunjuveedu, Ittykonam, Pulayanarkotta</p>
                     <p class="font-medium">Thuruvikkal PO, Thiruvananthapuram, Kerala - 695031</p>
@@ -15,7 +15,7 @@
             </tr>
         </table>
     </div>
-    <div class="col text-center mt-10 mb-10">
+    <div class="col text-center mt-5 mb-5">
         <h2 class="title-color">RECEIPT</h2>
     </div>
     <div class="col">
