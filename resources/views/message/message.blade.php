@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mt-5">
+                        <div class="col-md-6 mt-3">
                             <div class="col-sm-12">
                                 <h5>Select Well-wishers</h5>
                             </div>
