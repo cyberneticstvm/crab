@@ -36,10 +36,10 @@
                                 <tbody>
                                     @forelse($messages as $key => $message)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $message->created_at->format('d.M.Y') }}</td>
+                                        <td>{{ $message->name }}</td>
+                                        <td>{{ $message->phone_code.$message->mobile }}</td>
+                                        <td class="text-center"><a href="{{ route('wa.message.preview', ['id' => encrypt($message->id), 'type' => 'custom']) }}" target="_blank">Preview</a></td>
                                     </tr>
                                     @empty
                                     @endforelse
