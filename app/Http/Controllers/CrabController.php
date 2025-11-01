@@ -136,7 +136,7 @@ class CrabController extends Controller
                     'name' => $request->name,
                 ];
                 $res = sendWAMessage($url, $member, 'crab_notification', 'Message_From_CRAB_House_TVM_');
-                dd($res['messages']);
+                dd($res['messages'][0]['id']);
                 die;
             else:
                 return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
