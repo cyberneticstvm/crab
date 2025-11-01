@@ -42,9 +42,7 @@
     </div>
     <div class="col">
         <p class="font-big"><strong class="box"><span style="font-family: DejaVu Sans, sans-serif; ">&#8377;</span>{{ number_format($donation->amount, 2) }}/-</strong></p>
-    </div>
-    <div class="col text-end">
-        <p class="font-medium">Secretary</p>
+        <p class="font-medium text-end">Secretary</p>
     </div>
 </div>
 @endsection
