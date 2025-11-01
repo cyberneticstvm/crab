@@ -5,7 +5,7 @@
         <table class="border-0">
             <tr class="border-0">
                 <td width="20%" class="border-0"><img src="./assets/docs/crab-logo.jpeg" width='100%' /></td>
-                <td class="border-0" style="line-height: 25px;">
+                <td class="border-0" style="line-height: 10px;">
                     <h2 class="title-color">CANCER REMEDY ASSISTANCE BUREAU (CRAB)</h2>
                     <p class="font-big">Reg No. T 84/99</p>
                     <p class="font-medium">TC 96/657(1), Near Kunjuveedu, Ittykonam, Pulayanarkotta</p>
