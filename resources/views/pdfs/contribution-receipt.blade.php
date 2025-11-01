@@ -22,10 +22,10 @@
         <table class="border-0" width="100%">
             <tr>
                 <td class="border-0">
-                    <p class="font-medium">Receipt No. {{ $donation->receipt_number }}</p>
+                    <div class="font-medium">Receipt No. {{ $donation->receipt_number }}</div>
                 </td>
                 <td class="border-0">
-                    <p class="font-medium text-end">Date. {{ date('d.M.Y') }}</p>
+                    <div class="font-medium text-end">Date. {{ date('d.M.Y') }}</div>
                 </td>
             </tr>
         </table>
@@ -35,14 +35,16 @@
         <p class="font-medium ln-h-30"> from Shri/Smt <strong>{{ $donation->member->name }}</strong>, Mobile Number <strong>{{ $donation->member->mobile }}</strong>, Address <strong>{{ $donation->member->address }}</strong>, PAN No. <strong>{{ $donation->member->pan_number ?? '..........................' }}</strong>, Email <strong>{{ $donation->member->email ?? '........................' }}</strong> as Cash/Cheque/DD (Bank) <strong>{{ $donation->bank_cheque ?? '..........................' }}</strong> dated <strong>{{ $donation->payment_date->format('d.M.Y') }}</strong> towards donation.</p>
     </div>
     <div class="col mt-10">
-        <p>Note: This donation is exempted U.S 80G of IT Act. 1961 vide Order No. ITBA/EXM/S/80G/2019-20/1026490567(1) Dt. 12-03-2020 by Commissioner of IT(Exemption) Kochi.</p>
+        Note: This donation is exempted U.S 80G of IT Act. 1961 vide Order No. ITBA/EXM/S/80G/2019-20/1026490567(1) Dt. 12-03-2020 by Commissioner of IT(Exemption) Kochi.
     </div>
-    <div class="font-medium col">
-        <p>CRAB PAN No. AAATC4854E</p>
+    <div class="font-medium col mt-5 text-end">
+        CRAB PAN No. AAATC4854E
     </div>
-    <div class="col">
-        <p class="font-big"><strong class="box"><span style="font-family: DejaVu Sans, sans-serif; ">&#8377;</span>{{ number_format($donation->amount, 2) }}/-</strong></p>
-        <div class="font-medium text-end">Secretary</div>
+    <div class="col mt-10">
+        <div class="font-big mt-10" style="display: inline-block;"><strong class="box"><span style="font-family: DejaVu Sans, sans-serif; ">&#8377;</span>{{ number_format($donation->amount, 2) }}/-</strong></div>
+    </div>
+    <div class="font-medium text-end">
+        Secretary
     </div>
 </div>
 @endsection
