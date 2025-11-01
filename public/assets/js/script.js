@@ -325,3 +325,8 @@ $(".mode").on("click", function () {
   $(".mode").addClass(
     localStorage.getItem("mode") === "dark-only" ? "active" : " "
   );
+
+  $(document).on("click", ".sendCustomMessage", function(){
+    let mid = $(this).data("mid");
+    $("#mid").val(mid);
+  })

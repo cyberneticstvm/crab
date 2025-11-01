@@ -29,6 +29,9 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/wa/msg/preview/{id}', 'waMessagePreview')->name('wa.message.preview');
         Route::post('/wa/send/message/{id}', 'sendWAMessage')->name('send.wa.message');
         Route::get('/wa/send/receipt/{id}', 'sendWAReceipt')->name('send.wa.receipt');
+
+        Route::get('custom/message/register', 'customMessages')->name('custom.message.register');
+        Route::post('custom/message/save', 'saveCustomMessage')->name('custom.message.save');
     });
 
     Route::prefix('export')->controller(ImportExportController::class)->group(function () {

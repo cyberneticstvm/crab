@@ -43,6 +43,7 @@ class ContributionController extends Controller
         ]);
         try {
             $inputs = $request->all();
+            $inputs['receipt_number'] = Contribution::max('receipt_number') + 1 ?? 1;
             $inputs['created_by'] = Auth::user()->id;
             $inputs['updated_by'] = Auth::user()->id;
             Contribution::create($inputs);

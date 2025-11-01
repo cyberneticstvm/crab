@@ -13,7 +13,7 @@
     <!-- Container-fluid starts-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right">
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right">
                 <div class="card income-card card-secondary">
                     <div class="card-body align-items-center">
                         <div class="round-progress knob-block text-center">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right second">
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right second">
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right second">
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right second">
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
@@ -40,11 +40,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right second">
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right second">
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
                             <a class="btn btn-square btn-primary" href="{{ route('message.register') }}">Message Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right second">
+                <div class="card income-card card-primary">
+                    <div class="card-body">
+                        <div class="round-progress knob-block text-center">
+                            <a class="btn btn-square btn-primary" href="{{ route('custom.message.register') }}">Custom Message Register</a>
                         </div>
                     </div>
                 </div>

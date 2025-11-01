@@ -32,6 +32,7 @@
                                         <th>Title</th>
                                         <th>Preview</th>
                                         <th>Send</th>
+                                        <th>Custom</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -43,6 +44,7 @@
                                         <td>{{ $message->title }}</td>
                                         <td class="text-center"><a href="{{ route('wa.message.preview', encrypt($message->id)) }}" target="_blank">Preview</a></td>
                                         <td class="text-center"><a href="{{ route('wa.message', encrypt($message->id)) }}" class=""><i class="fa fa-whatsapp fa-lg text-success"></i></a></td>
+                                        <td class="text-center"><a href="javascript:void(0)" data-mid="{{ $message->id }}" class="sendCustomMessage" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-send fa-lg text-primary"></i></a></td>
                                         <td class="text-center">{!! $message->delStatus() !!}</td>
                                         <td class="text-center">
                                             <a href="{{ route('message.edit', encrypt($message->id)) }}"><i class="fa fa-pencil fa-lg text-warning"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -60,5 +62,47 @@
         </div>
     </div>
     <!-- Container-fluid Ends-->
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            {{ html()->form('post')->route('custom.message.save')->class('theme-form')->open() }}
+            <div class="modal-header">
+                <h5 class="modal-title">Send Custom Message</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="mid" id="mid" value="" />
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label class="col-form-label pt-0 req" for="donor">Receiver Name</label>
+                        {{ html()->text('name', old('name'))->class('form-control')->placeholder('Name')->required() }}
+                        @error('name')
+                        <small class="text-danger">{{ $errors->first('name') }}</small>
+                        @enderror
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="col-form-label pt-0 req" for="contributor">Country Code</label>
+                        {{ html()->select('phone_code', $pcodes, '91')->class('form-control js-example-basic-single')->placeholder('Select')->required() }}
+                        @error('phone_code')
+                        <small class="text-danger">{{ $errors->first('phone_code') }}</small>
+                        @enderror
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="col-form-label pt-0 req" for="mobile">Mobile Number</label>
+                        {{ html()->text('mobile', old('mobile'))->class('form-control')->maxlength(15)->placeholder('0123456789')->required() }}
+                        @error('mobile')
+                        <small class="text-danger">{{ $errors->first('mobile') }}</small>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-submit btn-primary" type="submit">Send <i class="fa fa-send"></i></button>
+            </div>
+            {{ html()->form()->close() }}
+        </div>
+    </div>
 </div>
 @endsection

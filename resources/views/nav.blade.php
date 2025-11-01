@@ -38,6 +38,7 @@
                             <li><a href="{{ route('member.register', 'member') }}">Members</a></li>
                             <li><a href="{{ route('contribution.register') }}">Donations</a></li>
                             <li><a href="{{ route('message.register') }}">Messages</a></li>
+                            <li><a href="{{ route('custom.message.register') }}">Custom Messages</a></li>
                         </ul>
                     </li>
                 </ul>

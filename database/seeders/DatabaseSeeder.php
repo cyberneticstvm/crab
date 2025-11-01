@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             'UPI',
             'Other'
         ];
+
         foreach ($pmodes as $pmode) {
             PaymentMode::insert(['name' => $pmode]);
         }

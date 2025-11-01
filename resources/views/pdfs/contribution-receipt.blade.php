@@ -22,7 +22,7 @@
         <table class="border-0" width="100%">
             <tr>
                 <td class="border-0">
-                    <p class="font-medium">Receipt No. {{ $donation->id }}</p>
+                    <p class="font-medium">Receipt No. {{ $donation->receipt_number }}</p>
                 </td>
                 <td class="border-0">
                     <p class="font-medium text-end">Date. {{ date('d.M.Y') }}</p>

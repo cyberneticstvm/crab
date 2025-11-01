@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contribution;
+use App\Models\Country;
+use App\Models\CustomMessage;
 use App\Models\Member;
 use App\Models\Message;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -100,5 +102,46 @@ class CrabController extends Controller
             return redirect()->back()->with("error", $e->getMessage());
         }
         return redirect()->back()->with("success", "Receipt sent successfully");
+    }
+
+    function customMessages()
+    {
+        $messages = CustomMessage::latest()->get();
+        return view("message.custom.index", compact('messages', 'pcodes'));
+    }
+
+    function saveCustomMessage(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone_code' => 'required',
+            'mobile' => 'required|numeric',
+        ]);
+
+        try {
+            $message = Message::findOrFail($request->mid);
+            $filename = 'crab_house_' . time() . '.pdf';
+            $path = public_path('pdfs/');
+            if ($message->letter_head == 1):
+                $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
+            else:
+                $pdf = mpdf::loadview('pdfs.wa-message1', compact('message'));
+            endif;
+            $pdf->save($path . $filename);
+            $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
+            if (File::exists(public_path('pdfs/' . $filename))):
+                $member = (object)[
+                    'phone_code' => $request->phone_code,
+                    'mobile' => $request->mobile,
+                    'name' => $request->name,
+                ];
+                $res = sendWAMessage($url, $member, 'crab_notification', 'Message_From_CRAB_House_TVM_');
+            else:
+                return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
+            endif;
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage());
+        }
+        return redirect()->back()->with("success", "Message sent successfully");
     }
 }

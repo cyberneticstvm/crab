@@ -1,0 +1,56 @@
+@extends("base")
+@section("content")
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Custom Message Register</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Custom Message Register</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="" id="advance-1">
+                                <thead>
+                                    <tr>
+                                        <th>Created Date</th>
+                                        <th>Sent to</th>
+                                        <th>Mobile</th>
+                                        <th>Preview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($messages as $key => $message)
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    @empty
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+</div>
+@endsection

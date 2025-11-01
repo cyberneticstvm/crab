@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Message;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class MessageController extends Controller
     public function index()
     {
         $messages = Message::withTrashed()->latest()->get();
-        return view('message.index', compact('messages'));
+        $pcodes = Country::pluck('phone', 'phone');
+        return view('message.index', compact('messages', 'pcodes'));
     }
 
     /**

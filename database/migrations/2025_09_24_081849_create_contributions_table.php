@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contributions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('receipt_number')->unique();
             $table->unsignedBigInteger('member_id');
             $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->date('payment_date');
