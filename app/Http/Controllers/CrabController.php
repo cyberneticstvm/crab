@@ -144,6 +144,7 @@ class CrabController extends Controller
                     'title' => $message->title,
                     'message' => $message->message,
                     'wa_msg_id' => $res['messages'][0]['id'],
+                    'created_by' => $request->user()->id,
                 ]);
             else:
                 return redirect()->back()->with("error", "Inavlid file path")->withInput($request->all());
