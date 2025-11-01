@@ -11,7 +11,7 @@ class PdfController extends Controller
     function contributionReceipt(string $id)
     {
         $donation = Contribution::findOrFail(decrypt($id));
-        $pdf = Pdf::loadView('pdfs.contribution-receipt', compact('donation'))->setPaper('a4', 'landscape');
+        $pdf = Pdf::loadView('pdfs.contribution-receipt', compact('donation'));
         return $pdf->stream('receipt' . '.pdf');
     }
 }
