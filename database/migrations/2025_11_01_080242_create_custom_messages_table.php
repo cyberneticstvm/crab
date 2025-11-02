@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('custom_messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('message_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('phone_code', 5)->nullable();
             $table->string('mobile', 15);
