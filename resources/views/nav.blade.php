@@ -39,7 +39,7 @@
                             <li><a href="{{ route('contribution.register') }}">Donations</a></li>
                             <li><a href="{{ route('message.register', 'regular') }}">Messages</a></li>
                             <li><a href="{{ route('message.register', 'custom') }}">Custom Messages</a></li>
-                            <li><a href="{{ route('custom.message.register') }}">Sent Messages</a></li>
+                            <li><a href="{{ route('custom.message.register') }}">Sent Messages (Custom)</a></li>
                         </ul>
                     </li>
                 </ul>
