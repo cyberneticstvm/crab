@@ -5,7 +5,7 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3>Custom Message Receiver Register</h3>
+                    <h3>Sent Messages</h3>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h5>Custom Message Receiver Register</h5>
+                                <h5>Sent Messages</h5>
                             </div>
                         </div>
                     </div>
