@@ -39,10 +39,8 @@ class CrabController extends Controller
 
     function waMessagePreview(string $id, string $type)
     {
-        if ($type == 'regular'):
+        if ($type == 'regular' || $type == 'custom'):
             $message = Message::findOrFail(decrypt($id));
-        elseif ($type == 'custom'):
-            $message = CustomMessage::where('message_id', decrypt($id))->first();
         else:
             $message = CustomMessage::findOrFail(decrypt($id));
         endif;
