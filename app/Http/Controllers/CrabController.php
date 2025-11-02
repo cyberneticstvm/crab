@@ -41,8 +41,10 @@ class CrabController extends Controller
     {
         if ($type == 'regular'):
             $message = Message::findOrFail(decrypt($id));
-        else:
+        elseif ($type == 'custom'):
             $message = CustomMessage::where('message_id', decrypt($id))->first();
+        else:
+            $message = CustomMessage::findOrFail(decrypt($id));
         endif;
         if ($message->letter_head == 1):
             $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
