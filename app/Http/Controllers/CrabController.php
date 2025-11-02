@@ -44,6 +44,8 @@ class CrabController extends Controller
         else:
             $message = CustomMessage::where('message_id', decrypt($id))->first();
         endif;
+        dd($message);
+        die;
         if ($message->letter_head == 1):
             $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
         else:
