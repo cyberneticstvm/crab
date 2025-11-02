@@ -46,7 +46,7 @@
                                     <tr>
                                         <td>{{ $message->created_at->format('d.M.Y')}}</td>
                                         <td>{{ $message->title }}</td>
-                                        <td class="text-center"><a href="{{ route('wa.message.preview', ['id' => encrypt($message->id), 'type' => 'custom']) }}" target="_blank">Preview {{ $message->id }}</a></td>
+                                        <td class="text-center"><a href="{{ route('wa.message.preview', ['id' => encrypt($message->id), 'type' => 'custom']) }}" target="_blank">Preview</a></td>
                                         <td class="text-center"><a href="javascript:void(0)" data-mid="{{ $message->id }}" class="sendCustomMessage" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-send fa-lg text-primary"></i></a></td>
                                         <td class="text-center">{!! $message->delStatus() !!}</td>
                                         <td class="text-center">
