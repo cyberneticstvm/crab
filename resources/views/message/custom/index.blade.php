@@ -23,7 +23,7 @@
                             <div class="col-sm-2 text-end dropdown-basic">
                                 <div class="dropdown text-start">
                                     <button class="dropbtn btn-primary" type="button" data-bs-original-title="" title="">Create <span><i class="icofont icofont-arrow-down"></i></span></button>
-                                    <div class="dropdown-content"><a href="{{ route('message.create', 'regular') }}" data-bs-original-title="" title="">Regular Message</a><a href="{{ route('message.create', 'custom') }}" data-bs-original-title="" title="">Custom Message</a></div>
+                                    <div class="dropdown-content"><a href="{{ route('message.create', 'custom') }}" data-bs-original-title="" title=""> Message</a></div>
                                 </div>
                             </div>
                         </div>
