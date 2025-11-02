@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-sm-4">
                         <label class="col-form-label pt-0 req" for="contributor">Country Code</label>
-                        {{ html()->select('phone_code', $pcodes, '91')->class('form-control')->placeholder('Select')->required() }}
+                        {{ html()->select('phone_code', $pcodes, '91')->class('form-control js-example-basic-single')->placeholder('Select')->required() }}
                         @error('phone_code')
                         <small class="text-danger">{{ $errors->first('phone_code') }}</small>
                         @enderror
