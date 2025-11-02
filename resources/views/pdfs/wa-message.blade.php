@@ -57,7 +57,8 @@
                 <br />
                 <br />
                 <br />
-                <div class="text-end txt-small">{{ date('d.M.Y h:i a') }}</div>
+                <br />
+                <div class="text-end txt-small">{{ ($message?->wa_ms_id) ? $message->created_at->format('d.M.Y h:i a') : date('d.M.Y h:i a') }}</div>
                 <div style="white-space:wrap">
                     <p class="font-big text-center">{!! $message->title ?? '' !!}</p>
                 </div>
