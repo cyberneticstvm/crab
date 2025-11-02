@@ -39,12 +39,11 @@ class CrabController extends Controller
 
     function waMessagePreview(string $id, string $type)
     {
-        /*if ($type == 'regular'):
+        if ($type == 'regular'):
             $message = Message::findOrFail(decrypt($id));
         else:
-            $message = CustomMessage::findOrFail(decrypt($id));
-        endif;*/
-        $message = Message::findOrFail(decrypt($id));
+            $message = CustomMessage::where('message_id', decrypt($id))->first();
+        endif;
         if ($message->letter_head == 1):
             $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
         else:
