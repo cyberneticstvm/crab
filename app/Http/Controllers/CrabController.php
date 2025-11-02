@@ -39,11 +39,12 @@ class CrabController extends Controller
 
     function waMessagePreview(string $id, string $type)
     {
-        if ($type == 'regular'):
+        /*if ($type == 'regular'):
             $message = Message::findOrFail(decrypt($id));
         else:
             $message = CustomMessage::findOrFail(decrypt($id));
-        endif;
+        endif;*/
+        $message = Message::findOrFail(decrypt($id));
         if ($message->letter_head == 1):
             $pdf = mpdf::loadview('pdfs.wa-message', compact('message'));
         else:
@@ -111,7 +112,7 @@ class CrabController extends Controller
     function customMessages()
     {
         $messages = CustomMessage::latest()->get();
-        return view("message.custom.index", compact('messages'));
+        return view("message.custom.list", compact('messages'));
     }
 
     function saveCustomMessage(Request $request)
@@ -141,6 +142,7 @@ class CrabController extends Controller
                 ];
                 $res = sendWAMessage($url, $member, 'crab_notification', 'Message_From_CRAB_House_TVM_');
                 CustomMessage::create([
+                    'message_id' => $message->id,
                     'name' => $member->name,
                     'phone_code' => $member->phone_code,
                     'mobile' => $member->mobile,

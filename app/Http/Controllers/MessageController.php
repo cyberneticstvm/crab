@@ -13,25 +13,25 @@ class MessageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($type)
     {
-        $messages = Message::withTrashed()->latest()->get();
+        $messages = Message::withTrashed()->where('type', $type)->latest()->get();
         $pcodes = Country::pluck('phone', 'phone');
-        return view('message.index', compact('messages', 'pcodes'));
+        return view(($type == 'regular') ? 'message.index' : 'message.custom.index', compact('messages', 'pcodes', 'type'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $type)
     {
-        return view('message.create');
+        return view('message.create', compact('type'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $type)
     {
         $request->validate([
             //'title' => 'required|unique:messages,title',
@@ -39,13 +39,14 @@ class MessageController extends Controller
         ]);
         try {
             $inputs = $request->all();
+            $inputs['type'] = $type;
             $inputs['created_by'] = Auth::user()->id;
             $inputs['updated_by'] = Auth::user()->id;
             Message::create($inputs);
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->route('message.register')->with("success", "Message recorded successfully");
+        return redirect()->route('message.register', $type)->with("success", "Message recorded successfully");
     }
 
     /**
@@ -68,7 +69,7 @@ class MessageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id, string $type)
     {
         $request->validate([
             //'title' => 'required|unique:messages,title,' . decrypt($id),
@@ -82,15 +83,15 @@ class MessageController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->route('message.register')->with("success", "Message updated successfully");
+        return redirect()->route('message.register', $type)->with("success", "Message updated successfully");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, string $type)
     {
         Message::findOrFail(decrypt($id))->delete();
-        return redirect()->route('message.register')->with("success", "Message deleted successfully");
+        return redirect()->route('message.register', $type)->with("success", "Message deleted successfully");
     }
 }

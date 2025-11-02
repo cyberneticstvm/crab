@@ -44,7 +44,7 @@
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
-                            <a class="btn btn-square btn-primary" href="{{ route('message.register') }}">Message Register</a>
+                            <a class="btn btn-square btn-primary" href="{{ route('message.register', 'regular') }}">Message Register</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,16 @@
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
-                            <a class="btn btn-square btn-primary" href="{{ route('custom.message.register') }}">Custom Message Register</a>
+                            <a class="btn btn-square btn-primary" href="{{ route('message.register', 'custom') }}">Custom Message Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 box-col-3 chart_data_right second">
+                <div class="card income-card card-primary">
+                    <div class="card-body">
+                        <div class="round-progress knob-block text-center">
+                            <a class="btn btn-square btn-primary" href="{{ route('custom.message.register') }}">Message Sent Register</a>
                         </div>
                     </div>
                 </div>

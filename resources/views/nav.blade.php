@@ -37,8 +37,9 @@
                             <li><a href="{{ route('member.register', 'contributor') }}">Well-wishers</a></li>
                             <li><a href="{{ route('member.register', 'member') }}">Members</a></li>
                             <li><a href="{{ route('contribution.register') }}">Donations</a></li>
-                            <li><a href="{{ route('message.register') }}">Messages</a></li>
-                            <li><a href="{{ route('custom.message.register') }}">Custom Messages</a></li>
+                            <li><a href="{{ route('message.register', 'regular') }}">Messages</a></li>
+                            <li><a href="{{ route('message.register', 'custom') }}">Custom Messages</a></li>
+                            <li><a href="{{ route('custom.message.register') }}">Message Sent List</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -18,7 +18,7 @@
                     <div class="card-header pb-0">
                         <h5>Message Update</h5>
                     </div>
-                    {{ html()->form('post')->route('message.update', encrypt($message->id))->class('theme-form')->open() }}
+                    {{ html()->form('post')->route('message.update', ['id' => encrypt($message->id), 'type' => $message->type])->class('theme-form')->open() }}
                     <div class="card-body">
                         <div class="card-body">
                             <div class="row g-3">

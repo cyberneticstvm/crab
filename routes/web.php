@@ -58,12 +58,12 @@ Route::middleware(['web', 'auth'])->group(function () {
     });
 
     Route::prefix('message')->controller(MessageController::class)->group(function () {
-        Route::get('register', 'index')->name('message.register');
-        Route::get('create', 'create')->name('message.create');
-        Route::post('create', 'store')->name('message.save');
+        Route::get('register/{type}', 'index')->name('message.register');
+        Route::get('create/{type}', 'create')->name('message.create');
+        Route::post('create/{type}', 'store')->name('message.save');
         Route::get('edit/{id}', 'edit')->name('message.edit');
-        Route::post('edit/{id}', 'update')->name('message.update');
-        Route::get('delete/{id}', 'destroy')->name('message.delete');
+        Route::post('edit/{id}/{type}', 'update')->name('message.update');
+        Route::get('delete/{id}/{type}', 'destroy')->name('message.delete');
     });
 
     Route::prefix('pdf')->controller(PdfController::class)->group(function () {

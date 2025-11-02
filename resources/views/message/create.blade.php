@@ -18,7 +18,7 @@
                     <div class="card-header pb-0">
                         <h5>Message Create</h5>
                     </div>
-                    {{ html()->form('post')->route('message.save')->class('theme-form')->open() }}
+                    {{ html()->form('post')->route('message.save', $type)->class('theme-form')->open() }}
                     <div class="card-body">
                         <div class="card-body">
                             <div class="row g-3">
