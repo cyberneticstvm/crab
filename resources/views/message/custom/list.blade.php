@@ -39,7 +39,7 @@
                                         <td>{{ $message->created_at->format('d.M.Y') }}</td>
                                         <td>{{ $message->name }}</td>
                                         <td>{{ $message->phone_code.$message->mobile }}</td>
-                                        <td class="text-center"><a href="{{ route('wa.message.preview', ['id' => encrypt($message->id), 'type' => 'custom']) }}" target="_blank">Preview</a></td>
+                                        <td class="text-center"><a href="{{ route('wa.message.preview', ['id' => encrypt($message->id), 'type' => 'sent']) }}" target="_blank">Preview</a></td>
                                     </tr>
                                     @empty
                                     @endforelse
