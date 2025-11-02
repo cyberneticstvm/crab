@@ -62,7 +62,7 @@
                 <div class="card income-card card-primary">
                     <div class="card-body">
                         <div class="round-progress knob-block text-center">
-                            <a class="btn btn-square btn-primary" href="{{ route('custom.message.register') }}">Sent Messages</a>
+                            <a class="btn btn-square btn-primary" href="{{ route('custom.message.register') }}">Sent Messages (Custom)</a>
                         </div>
                     </div>
                 </div>
