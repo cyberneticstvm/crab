@@ -20,9 +20,11 @@ class DonationExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
         return $donations->map(function ($data, $key) {
             return [
                 'slno' => $key + 1,
+                'slno' => $data->receipt_number,
                 'name' => $data->member->name,
                 'mobile' => $data->member->mobile,
                 'email' => $data->member->email,
+                'pan' => $data->member->pan_number,
                 'amount' => $data->amount,
                 'mode' => $data->pmode->name,
                 'date' => $data->payment_date?->format('d.M.Y'),
@@ -32,11 +34,11 @@ class DonationExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
 
     public function headings(): array
     {
-        return ['SL No', 'Member Name', 'Contact Number', 'Email', 'Amount', 'Payment Mode', 'Date'];
+        return ['SL No', 'Receipt No', 'Member Name', 'Contact Number', 'Email', 'PanCard', 'Amount', 'Payment Mode', 'Date'];
     }
 
     public function styles(Worksheet $sheet)
     {
-        $sheet->getStyle('A1:G1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:I1')->getFont()->setBold(true);
     }
 }

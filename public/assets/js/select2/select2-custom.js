@@ -3,9 +3,12 @@ setTimeout(function(){
         (function($) {
             "use strict";
             // Single Search Select
-            $(".js-example-basic-single").select2({
+            $(".js-example-basic-single").select2();
+
+            $(".js-example-basic-single1").select2({
                 dropdownParent: $('#exampleModalCenter')
             });
+
             $(".js-example-disabled-results").select2();
 
             // Multi Select
