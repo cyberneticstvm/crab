@@ -20,7 +20,7 @@ class DonationExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
         return $donations->map(function ($data, $key) {
             return [
                 'slno' => $key + 1,
-                'slno' => $data->receipt_number,
+                'receipt' => $data->receipt_number,
                 'name' => $data->member->name,
                 'mobile' => $data->member->mobile,
                 'email' => $data->member->email,
