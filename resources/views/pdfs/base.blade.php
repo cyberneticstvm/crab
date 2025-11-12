@@ -57,7 +57,7 @@
 
         .box {
             border: 1px solid #000;
-            padding: 10px;
+            padding: 5px;
         }
 
         .border-0 {
