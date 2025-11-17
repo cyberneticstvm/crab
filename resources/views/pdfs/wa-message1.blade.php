@@ -68,7 +68,7 @@
                 <div style="white-space:wrap">
                     <p style="margin-left: 25%;">{!! nl2br($message->message) !!}</p>
                 </div>
-                <div class="text-start">
+                <div class="text-start" style="margin-left: 25%;">
                     <img src="{{ asset('/assets/docs/signature-crab.png') }}" width="25%" />
                 </div>
             </div>
