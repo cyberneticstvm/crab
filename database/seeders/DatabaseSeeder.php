@@ -20,8 +20,29 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Soft Bugs',
             'email' => 'mail@softbugs.in',
-            'password' => Hash::make('softbugs'),
+            'password' => Hash::make('Welcome@2026'),
             'role' => 'admin',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Sajji Karunakaran',
+            'email' => 'karunakaransajji50@gmail.com',
+            'password' => Hash::make('sajjik'),
+            'role' => 'admin',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Shyam',
+            'email' => 'shyamkris.mg@gmail.com',
+            'password' => Hash::make('shyamkris'),
+            'role' => 'staff',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Crab Care',
+            'email' => 'crabcare2020@gmail.com',
+            'password' => Hash::make('crabcare2020'),
+            'role' => 'staff',
         ]);
 
         $pmodes = [
