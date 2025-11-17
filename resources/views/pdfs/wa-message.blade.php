@@ -65,8 +65,8 @@
                 <div style="white-space:wrap">
                     <p class="">{!! nl2br($message->message) !!}</p>
                 </div>
-                <div class="text-end">
-                    <img src="{{ asset('/assets/docs/signature-crab.png') }}" />
+                <div class="text-start">
+                    <img src="{{ asset('/assets/docs/signature-crab.png') }}" width="25%" />
                 </div>
             </div>
         </div>
