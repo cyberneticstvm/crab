@@ -40,6 +40,7 @@ class MessageController extends Controller
         try {
             $inputs = $request->all();
             $inputs['type'] = $type;
+            $inputs['is_signed'] = ($request->is_sidned) ?? null;
             $inputs['created_by'] = Auth::user()->id;
             $inputs['updated_by'] = Auth::user()->id;
             Message::create($inputs);
@@ -78,6 +79,7 @@ class MessageController extends Controller
         try {
             $message = Message::findOrFail(decrypt($id));
             $inputs = $request->all();
+            $inputs['is_signed'] = ($request->is_sidned) ?? null;
             $inputs['updated_by'] = Auth::user()->id;
             $message->update($inputs);
         } catch (Exception $e) {
