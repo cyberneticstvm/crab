@@ -59,6 +59,10 @@
                                     <small class="text-danger">{{ $errors->first('message') }}</small>
                                     @enderror
                                 </div>
+                                <div class="col-sm-12">
+                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp</label>
+                                    <input type="checkbox" name="is_signed" value="1" class="" {{ ($message->is_signed) ? 'checked' : '' }} />
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer text-end">

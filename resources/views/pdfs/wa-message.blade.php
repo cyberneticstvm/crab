@@ -65,9 +65,11 @@
                 <div style="white-space:wrap">
                     <p class="">{!! nl2br($message->message) !!}</p>
                 </div>
+                @if($message->is_signed)
                 <div class="text-start">
-                    <img src="{{ asset('/assets/docs/signature-crab.png') }}" width="25%" />
+                    <img src="{{ asset('/assets/docs/crab-sign.png') }}" width="25%" />
                 </div>
+                @endif
             </div>
         </div>
     </div>
