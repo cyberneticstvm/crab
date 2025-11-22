@@ -51,7 +51,7 @@
                                     <img src="{{ asset('/assets/docs/crab-lh-bg1.jpg') }}" width="25%" />
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-3 g-3">
                                 <div class="col-sm-12">
                                     <label class="col-form-label pt-0" for="message">Message Content</label>
                                     {{ html()->textarea('message', old('message'))->rows(10)->class('form-control')->placeholder('Message Content') }}
