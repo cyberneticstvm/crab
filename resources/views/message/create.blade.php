@@ -50,18 +50,18 @@
                                     </div>
                                     <img src="{{ asset('/assets/docs/crab-lh-bg1.jpg') }}" width="25%" />
                                 </div>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp</label>
+                                    <input type="checkbox" name="is_signed" value="1" class="" />
+                                </div>
                             </div>
                             <div class="row mt-3 g-3">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label pt-0" for="message">Message Content</label>
+                                    <label class="col-form-label pt-0" for="message">Message Content (Max 1500 Chars Length)</label>
                                     {{ html()->textarea('message', old('message'))->rows(10)->class('form-control')->placeholder('Message Content') }}
                                     @error('message')
                                     <small class="text-danger">{{ $errors->first('message') }}</small>
                                     @enderror
-                                </div>
-                                <div class="col-sm-12">
-                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp</label>
-                                    <input type="checkbox" name="is_signed" value="1" class="" />
                                 </div>
                             </div>
                         </div>
