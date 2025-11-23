@@ -35,7 +35,7 @@ class MessageController extends Controller
     {
         $request->validate([
             //'title' => 'required|unique:messages,title',
-            'message' => 'required|min:10|max:1750',
+            'message' => 'required|min:10|max:1500',
         ]);
         try {
             $inputs = $request->all();
@@ -74,7 +74,7 @@ class MessageController extends Controller
     {
         $request->validate([
             //'title' => 'required|unique:messages,title,' . decrypt($id),
-            'message' => 'required|min:10|max:1750',
+            'message' => 'required|min:10|max:1500',
         ]);
         try {
             $message = Message::findOrFail(decrypt($id));
