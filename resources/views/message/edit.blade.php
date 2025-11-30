@@ -51,8 +51,12 @@
                                     <img src="{{ asset('/assets/docs/crab-lh-bg1.jpg') }}" width="25%" />
                                 </div>
                                 <div class="col-sm-4">
-                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp</label>
+                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp (E)</label>
                                     <input type="checkbox" name="is_signed" value="1" class="" {{ ($message->is_signed) ? 'checked' : '' }} />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label pt-0" for="message">Include Signature & Stamp (M)</label>
+                                    <input type="checkbox" name="is_signedm" value="1" class="" {{ ($message->is_signedm) ? 'checked' : '' }} />
                                 </div>
                             </div>
                             <div class="row mt-3 g-3">

@@ -41,6 +41,7 @@ class MessageController extends Controller
             $inputs = $request->all();
             $inputs['type'] = $type;
             $inputs['is_signed'] = ($request->is_signed) ?? null;
+            $inputs['is_signedm'] = ($request->is_signedm) ?? null;
             $inputs['created_by'] = Auth::user()->id;
             $inputs['updated_by'] = Auth::user()->id;
             Message::create($inputs);
@@ -80,6 +81,7 @@ class MessageController extends Controller
             $message = Message::findOrFail(decrypt($id));
             $inputs = $request->all();
             $inputs['is_signed'] = ($request->is_signed) ?? null;
+            $inputs['is_signedm'] = ($request->is_signedm) ?? null;
             $inputs['updated_by'] = Auth::user()->id;
             $message->update($inputs);
         } catch (Exception $e) {

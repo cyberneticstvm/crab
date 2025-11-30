@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('letter_head')->nullable();
             $table->string('type', 15)->nullable();
             $table->integer('is_signed')->nullable();
+            $table->integer('is_signedm')->nullable();
+            $table->text('signature_e')->nullable();
+            $table->text('signature_m')->nullable();
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete('cascade');
             $table->foreignId('updated_by')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();
