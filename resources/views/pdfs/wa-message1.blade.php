@@ -73,7 +73,7 @@
                     <table>
                         <tr>
                             <td>
-                                With Regards,
+                                With Regards,<br>
                                 <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" /><br>
                                 Sajji Karunakaram<br>
                                 Secretary, Crab<br>
