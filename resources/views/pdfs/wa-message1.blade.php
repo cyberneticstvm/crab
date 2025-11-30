@@ -70,7 +70,20 @@
                 </div>
                 @if($message->is_signed)
                 <div class="text-start" style="margin-left: 25%;">
+                    With Regards,
                     <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
+                    Sajji Karunakaram<br>
+                    Secretary, Crab<br>
+                    +91 9447028686
+                    <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                </div>
+                @else($message->is_signedm)
+                <div class="text-start" style="margin-left: 25%;">
+                    സ്നേഹപൂർവ്വം,<br>
+                    <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
+                    സജ്ജി കരുണാകരൻ<br>
+                    സെക്രട്ടറി, ക്രാബ്‌<br>
+                    +91 9447028686
                     <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
                 </div>
                 @endif
