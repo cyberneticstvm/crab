@@ -85,7 +85,7 @@
                         </tr>
                     </table>
                 </div>
-                @else($message->is_signedm)
+                @else
                 <div class="text-start" style="margin-left: 25%;">
                     <table>
                         <tr>

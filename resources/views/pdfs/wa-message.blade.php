@@ -67,8 +67,37 @@
                 </div>
                 @if($message->is_signed)
                 <div class="text-start">
-                    <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
-                    <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                    <table>
+                        <tr>
+                            <td>
+                                With Regards,
+                                <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" /><br>
+                                Sajji Karunakaram<br>
+                                Secretary, Crab<br>
+                                +91 9447028686<br>
+                            </td>
+                            <td>
+                                <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @else
+                <div class="text-start">
+                    <table>
+                        <tr>
+                            <td>
+                                സ്നേഹപൂർവ്വം,<br>
+                                <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" /><br>
+                                സജ്ജി കരുണാകരൻ<br>
+                                സെക്രട്ടറി, ക്രാബ്‌<br>
+                                +91 9447028686<br>
+                            </td>
+                            <td>
+                                <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 @endif
             </div>
