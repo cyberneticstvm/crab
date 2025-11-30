@@ -79,12 +79,20 @@
                 </div>
                 @else($message->is_signedm)
                 <div class="text-start" style="margin-left: 25%;">
-                    സ്നേഹപൂർവ്വം,<br>
-                    <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
-                    <br>സജ്ജി കരുണാകരൻ<br>
-                    സെക്രട്ടറി, ക്രാബ്‌<br>
-                    +91 9447028686<br>
-                    <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                    <table>
+                        <tr>
+                            <td>
+                                സ്നേഹപൂർവ്വം,<br>
+                                <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" /><br>
+                                സജ്ജി കരുണാകരൻ<br>
+                                സെക്രട്ടറി, ക്രാബ്‌<br>
+                                +91 9447028686<br>
+                            </td>
+                            <td>
+                                <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="20%" />
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 @endif
             </div>
