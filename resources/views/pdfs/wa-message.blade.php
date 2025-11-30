@@ -67,7 +67,8 @@
                 </div>
                 @if($message->is_signed)
                 <div class="text-start">
-                    <img src="{{ asset('/assets/docs/crab-sign.png') }}" width="30%" />
+                    <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
+                    <img src="{{ asset('/assets/docs/crab-stamp.png') }}" width="30%" />
                 </div>
                 @endif
             </div>
