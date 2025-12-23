@@ -32,7 +32,7 @@
     </div>
     <div class="col">
         <p class="font-medium">Received a sum of <strong>Rs.{{ number_format($donation->amount, 2) }}/-</strong></p>
-        <p class="font-medium ln-h-30"> from Shri/Smt <strong>{{ $donation->member->name }}</strong>, Mobile Number <strong>{{ $donation->member->mobile }}</strong>, Address <strong>{{ $donation->member->address }}</strong>, PAN No. <strong>{{ $donation->member->pan_number ?? '..........................' }}</strong>, Email <strong>{{ $donation->member->email ?? '........................' }}</strong> as Cash/Cheque/DD (Bank) <strong>{{ $donation->bank_cheque ?? '..........................' }}</strong> dated <strong>{{ $donation->payment_date->format('d.M.Y') }}</strong> towards donation.</p>
+        <p class="font-medium ln-h-30"> from Shri/Smt <strong>{{ $donation->member->name }}</strong>, Mobile Number <strong>{{ $donation->member->mobile }}</strong>, Address <strong>{{ $donation->member->address }}</strong>, PAN/Aadhaar No. <strong>{{ $idno ?? '..........................' }}</strong>, Email <strong>{{ $donation->member->email ?? '........................' }}</strong> as Cash/Cheque/DD (Bank) <strong>{{ $donation->bank_cheque ?? '..........................' }}</strong> dated <strong>{{ $donation->payment_date->format('d.M.Y') }}</strong> towards donation.</p>
     </div>
     <div class="col mt-10">
         Note: This donation is exempted U.S 80G of IT Act. 1961 vide Order No. ITBA/EXM/S/80G/2019-20/1026490567(1) Dt. 12-03-2020 by Commissioner of IT(Exemption) Kochi.

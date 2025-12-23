@@ -11,7 +11,11 @@ class PdfController extends Controller
     function contributionReceipt(string $id)
     {
         $donation = Contribution::findOrFail(decrypt($id));
-        $pdf = Pdf::loadView('pdfs.contribution-receipt', compact('donation'));
+        $idno = $donation->member->pan_number;
+        if (!$idno):
+            $idno = $donation->member->adhaar;
+        endif;
+        $pdf = Pdf::loadView('pdfs.contribution-receipt', compact('donation', 'idno'));
         return $pdf->stream('receipt' . '.pdf');
     }
 }
