@@ -89,9 +89,13 @@ class CrabController extends Controller
     {
         try {
             $donation = Contribution::findOrFail(decrypt($id));
+            $idno = $donation->member->pan_number;
+            if (!$idno):
+                $idno = $donation->member->adhaar;
+            endif;
             $filename = 'crab_house_receipt_' . time() . '.pdf';
             $path = public_path('pdfs/');
-            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation'));
+            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation', 'idno'));
             $pdf->save($path . $filename);
             $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
             if (File::exists(public_path('pdfs/' . $filename))):
