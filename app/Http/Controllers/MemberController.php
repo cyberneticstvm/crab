@@ -38,7 +38,7 @@ class MemberController extends Controller
             'mobile' => 'required|numeric|unique:members,mobile',
             'phone_code' => 'required',
             'email' => 'nullable|unique:members,email',
-            'address' => 'required',
+            'address' => 'nullable',
         ]);
         try {
             $inputs = $request->all();
@@ -80,7 +80,7 @@ class MemberController extends Controller
             'mobile' => 'required|numeric|unique:members,mobile,' . decrypt($id),
             'phone_code' => 'required',
             'email' => 'nullable|unique:members,email,' . decrypt($id),
-            'address' => 'required',
+            'address' => 'nullable',
         ]);
         try {
             $member = Member::findOrFail(decrypt($id));

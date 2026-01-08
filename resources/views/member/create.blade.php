@@ -72,7 +72,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-5">
-                                    <label class="col-form-label pt-0 req" for="address">Address</label>
+                                    <label class="col-form-label pt-0" for="address">Address</label>
                                     {{ html()->text('address', old('address'))->class('form-control')->placeholder('Address') }}
                                     @error('address')
                                     <small class="text-danger">{{ $errors->first('address') }}</small>
