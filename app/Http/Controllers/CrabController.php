@@ -95,7 +95,8 @@ class CrabController extends Controller
             endif;
             $filename = 'crab_house_receipt_' . time() . '.pdf';
             $path = public_path('pdfs/');
-            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation', 'idno'));
+            $signature = true;
+            $pdf = Pdf::loadview('pdfs.contribution-receipt', compact('donation', 'idno', 'signature'));
             $pdf->save($path . $filename);
             $url = 'https://crab.softbugs.in/public/pdfs/' . $filename;
             if (File::exists(public_path('pdfs/' . $filename))):

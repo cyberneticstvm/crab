@@ -39,7 +39,9 @@
     </div>
     <div class="font-medium col mt-5 text-end">
         CRAB PAN No. AAATC4854E<br>
+        @if($signature)
         <img src="{{ asset('/assets/docs/crab-signature.png') }}" width="30%" />
+        @endif
     </div>
     <div class="col">
         <div class="font-big mt-10" style="display: inline-block;"><strong class="box"><span style="font-family: DejaVu Sans, sans-serif; ">&#8377;</span>{{ number_format($donation->amount, 2) }}/-</strong></div>
