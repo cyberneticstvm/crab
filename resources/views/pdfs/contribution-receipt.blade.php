@@ -21,10 +21,10 @@
     <div class="col">
         <table class="border-0" width="100%">
             <tr>
-                <td class="border-0">
+                <td class="border-0" style="margin-top: -5px;">
                     <div class="font-medium">Receipt No. {{ $donation->receipt_number }}</div>
                 </td>
-                <td class="border-0">
+                <td class="border-0" style="margin-top: -5px;">
                     <div class="font-medium text-end">Date. {{ date('d.M.Y') }}</div>
                 </td>
             </tr>
