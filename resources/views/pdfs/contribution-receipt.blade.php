@@ -15,8 +15,8 @@
             </tr>
         </table>
     </div>
-    <div class="col text-center" style="margin-top: -5px;">
-        <h2 class="title-color">RECEIPT</h2>
+    <div class="col text-center">
+        <h2 class="title-color" style="margin-top: -5px;">RECEIPT</h2>
     </div>
     <div class="col">
         <table class="border-0" width="100%">
