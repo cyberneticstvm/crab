@@ -15,7 +15,7 @@
             </tr>
         </table>
     </div>
-    <div class="col text-center">
+    <div class="col text-center" style="margin-top: -5px;">
         <h2 class="title-color">RECEIPT</h2>
     </div>
     <div class="col">
