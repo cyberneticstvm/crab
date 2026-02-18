@@ -16,15 +16,15 @@
         </table>
     </div>
     <div class="col text-center">
-        <h2 class="title-color" style="margin-top: -5px;">RECEIPT</h2>
+        <h2 class="title-color" style="margin-top: -5px; margin-bottom:-5px;">RECEIPT</h2>
     </div>
     <div class="col">
         <table class="border-0" width="100%">
             <tr>
-                <td class="border-0" style="margin-top: -5px;">
+                <td class="border-0">
                     <div class="font-medium">Receipt No. {{ $donation->receipt_number }}</div>
                 </td>
-                <td class="border-0" style="margin-top: -5px;">
+                <td class="border-0">
                     <div class="font-medium text-end">Date. {{ date('d.M.Y') }}</div>
                 </td>
             </tr>
